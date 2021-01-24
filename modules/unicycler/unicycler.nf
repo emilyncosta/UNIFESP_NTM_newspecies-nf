@@ -8,8 +8,8 @@ process UNICYCLER {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
     container 'quay.io/biocontainers/unicycler:0.4.8--py38h8162308_3'
-    cpus 16
-    memory "32 GB"
+    cpus 8
+    memory "15 GB"
 
     input:
     tuple val(genomeName),  path(genomeReads)

@@ -9,8 +9,8 @@ process SPADES {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode
     container 'quay.io/biocontainers/spades:3.14.0--h2d02072_0'
-    cpus 16
-    memory "32 GB"
+    cpus 8
+    memory "15 GB"
 
     input:
     tuple val(genomeName), path(genomeReads)

@@ -9,7 +9,7 @@ process SNIPPY {
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
     container 'quay.io/biocontainers/snippy:1.14.6--pl526_0'
     cpus 8
-    memory "16 GB"
+    memory "15 GB"
 
     input:
     tuple val(genomeName),  path(bestContig)
