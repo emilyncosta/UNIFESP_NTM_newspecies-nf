@@ -15,8 +15,12 @@ include { MULTIQC } from "./modules/multiqc/multiqc.nf"
 workflow {
 
     sra_ch = Channel.fromFilePairs(params.reads)
+    refGbk_ch = Channel.fromPath(Paths.get(params.gbkFile))
 
     FASTQC_UNTRIMMED(sra_ch)
+
+    //TODO
+    // MULTIQC()
 
     TRIMMOMATIC(sra_ch)
     FASTQC_TRIMMED(TRIMMOMATIC.out)
@@ -25,9 +29,19 @@ workflow {
 
     PROKKA(SPADES.out)
 
-    //TODO
-    // SNIPPY()
-    // MULTIQC()
+
+    TRIMMOMATIC(sra_ch)
+    SNIPPY(TRIMMOMATIC.out, refGbk_ch )
+
+
 }
 
 
+
+workflow WF_SNIPPY {
+    sra_ch = Channel.fromFilePairs(params.reads)
+    refGbk_ch = Channel.fromPath(Paths.get(params.gbkFile))
+
+    TRIMMOMATIC(sra_ch)
+    SNIPPY(TRIMMOMATIC.out, refGbk_ch )
+}
