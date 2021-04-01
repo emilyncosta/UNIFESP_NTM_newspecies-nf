@@ -37,7 +37,7 @@ process TRIMMOMATIC {
     $fq_1_unpaired \
     $fq_2_paired \
     $fq_2_unpaired \
-    LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+    LEADING:3 TRAILING:3 SLIDINGWINDOW:3:28 HEADCROP:20 MINLEN:40
     """
 }
 
