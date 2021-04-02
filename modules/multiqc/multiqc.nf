@@ -1,6 +1,7 @@
 nextflow.enable.dsl = 2
 
-params.resultsDir = "${params.outdir}/fastqc"
+params.fastqcResultsDir = "${params.outdir}/fastqc"
+params.resultsDir = "${params.outdir}/multiqc"
 params.saveMode = 'copy'
 params.shouldPublish = true
 
@@ -12,7 +13,7 @@ process MULTIQC {
     memory "8 GB"
 
     input:
-    path("""${params.fastqcResultsDir}""") from ch_in_multiqc
+    path("${params.fastqcResultsDir}/*")
 
     output:
     tuple path("""multiqc_data"""),
