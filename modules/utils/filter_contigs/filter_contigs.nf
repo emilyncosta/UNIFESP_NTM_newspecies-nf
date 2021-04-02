@@ -25,7 +25,7 @@ process UTILS_FILTER_CONTIGS {
 
 
     """
-    filter_contigs.pl 200 ${contig_fasta} > ${genomeName}.filtered.contigs.fasta
+    filter_contigs.pl 200 ${contig_fasta} > ${genomeName}.filtered.fasta
 
     """
 }
@@ -33,7 +33,8 @@ process UTILS_FILTER_CONTIGS {
 workflow test {
 
 
-input_ch = Channel.fromFilePairs("$launchDir/test_data/*_{1,2}.fastq.gz")
+input_ch = Channel.of(["123_S4_L001", "${launchDir}/test_data/123_S4_L001.fasta"],
+                      ["340_S6_L001", "${launchDir}/test_data/340_S6_L001.fasta"])
 
 
 UTILS_FILTER_CONTIGS(input_ch)
