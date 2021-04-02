@@ -15,6 +15,7 @@ process UNICYCLER {
     tuple val(genomeName),  path(genomeReads)
 
     output:
+    tuple val(genomeName), path("*contigs.fasta")
     path("${genomeName}")
 
     script:
@@ -26,6 +27,8 @@ process UNICYCLER {
     --short1 ${genomeReads[0]} \
     --short2 ${genomeReads[1]} \
     --out ${genomeName} 
+
+    cp ${genomeName}/assembly.fasta ${genomeName}.contig.fasta
     """
 
 }
