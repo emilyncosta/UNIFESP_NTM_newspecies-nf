@@ -23,10 +23,23 @@ workflow WF_QUALITY_CHECK {
 
     TRIMMOMATIC(sra_ch)
     FASTQC_TRIMMED(TRIMMOMATIC.out)
-    MULTIQC_TRIMMED(FASTQC_TRIMMED.out.collect())
+    MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
 
 
 }
+
+
+workflow WF_MISC {
+
+    sra_ch = Channel.fromFilePairs(params.reads)
+
+    TRIMMOMATIC(sra_ch)
+    FASTQC_TRIMMED(TRIMMOMATIC.out)
+    MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
+    UNICYCLER(TRIMMOMATIC.out)
+    
+}
+
 
 
 workflow {
