@@ -13,17 +13,17 @@ process MULTIQC {
     memory "8 GB"
 
     input:
-    path("${params.fastqcResultsDir}/*")
+    path("*")
 
     output:
     tuple path("""multiqc_data"""),
-            path("""multiqc_report.html""") into ch_out_multiqc
+            path("""multiqc_report.html""")
 
 
     script:
 
     """
-    multiqc ${params.fastqcResultsDir}
+    multiqc .
     """
 
 }
