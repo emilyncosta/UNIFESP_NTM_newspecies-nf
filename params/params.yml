@@ -1,4 +1,5 @@
 reads: "data/full_data/Myc_Raw_Data/*_R{1,2}_001.fastq.gz"
 outdir: "results"
+gbkFile: "${baseDir}/data/full_data/NZ_LT906469.1.gb"
 
 

@@ -15,6 +15,7 @@ process QUAST {
 
     input:
     path(scaffoldFiles)
+    path(refGbk_ch)
 
     output:
     path("quast_results")
@@ -23,7 +24,7 @@ process QUAST {
     script:
 
     """
-    quast ${scaffoldFiles} -t 80 -m 200 --circos -o Quast HZ01.fna
+    quast -r ${reference} -t ${task.cpus} ${scaffoldFiles} 
 
     """
 
