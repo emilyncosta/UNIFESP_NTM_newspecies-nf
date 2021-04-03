@@ -33,6 +33,14 @@ process UNICYCLER {
     cp ${genomeName}/assembly.fasta ${genomeName}.contigs.fasta
     """
 
+
+    stub:
+    """
+    mkdir ${genomeName}
+    touch ${genomeName}.contigs.fasta
+
+    """
+
 }
 
 

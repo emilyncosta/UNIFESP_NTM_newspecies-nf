@@ -8,7 +8,7 @@ include { FASTQC as FASTQC_UNTRIMMED } from "./modules/fastqc/fastqc.nf" addPara
 include { FASTQC as FASTQC_TRIMMED } from "./modules/fastqc/fastqc.nf" addParams(resultsDir: "${params.outdir}/fastqc_trimmed")
 include { MULTIQC as MULTIQC_TRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_trimmed", fastqcResultsDir: "${params.outdir}/fastqc_trimmed")
 include { MULTIQC as MULTIQC_UNTRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_untrimmed", fastqcResultsDir: "${params.outdir}/fastqc_untrimmed")
-include { UTILS_FILTERED_CONTIGS } from "./modules/utils/utils_filtered_contigs.nf"
+include { UTILS_FILTER_CONTIGS } from "./modules/utils/filter_contigs.nf"
 
 // TODO
 //include { SNIPPY } from "./modules/snippy/snippy.nf"
@@ -42,7 +42,7 @@ workflow WF_MISC {
     MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
 
     UNICYCLER(TRIMMOMATIC.out)
-    UTILS_FILTERED_CONTIGS(UNICYCLER.out[0])
+    UTILS_FILTER_CONTIGS(UNICYCLER.out[0])
     
 }
 

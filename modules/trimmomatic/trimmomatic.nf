@@ -41,6 +41,16 @@ process TRIMMOMATIC {
     $fq_2_unpaired \
     LEADING:3 TRAILING:3 SLIDINGWINDOW:3:28 HEADCROP:20 MINLEN:40
     """
+
+    stub:
+    """
+    touch ${genomeName}_R1.p.fastq.gz
+    touch ${genomeName}_R2.p.fastq.gz
+
+    touch ${genomeName}_R1.s.fastq.gz
+    touch ${genomeName}_R2.s.fastq.gz
+
+    """
 }
 
 workflow test {
