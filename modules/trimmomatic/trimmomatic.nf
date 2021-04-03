@@ -26,6 +26,8 @@ process TRIMMOMATIC {
     fq_2_paired = genomeName + '_R2.p.fastq.gz'
     fq_2_unpaired = genomeName + '_R2.s.fastq.gz'
 
+    // NOTE: We are NOT using adadpter sequence. Worth exploring.
+
     """
     trimmomatic \
     PE \
@@ -37,7 +39,17 @@ process TRIMMOMATIC {
     $fq_1_unpaired \
     $fq_2_paired \
     $fq_2_unpaired \
-    LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+    LEADING:3 TRAILING:3 SLIDINGWINDOW:3:28 HEADCROP:20 MINLEN:40
+    """
+
+    stub:
+    """
+    touch ${genomeName}_R1.p.fastq.gz
+    touch ${genomeName}_R2.p.fastq.gz
+
+    touch ${genomeName}_R1.s.fastq.gz
+    touch ${genomeName}_R2.s.fastq.gz
+
     """
 }
 
