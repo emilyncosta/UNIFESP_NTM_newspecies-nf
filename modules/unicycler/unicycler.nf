@@ -7,7 +7,6 @@ params.shouldPublish = true
 process UNICYCLER {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
-    publishDir params.resultsDir, mode: params.saveMode, pattern: "*contigs.fasta", enabled: false
 
     container 'quay.io/biocontainers/unicycler:0.4.8--py38h8162308_3'
     cpus 8
@@ -17,7 +16,7 @@ process UNICYCLER {
     tuple val(genomeName),  path(genomeReads)
 
     output:
-    tuple val(genomeName), path("*contigs.fasta")
+    tuple val(genomeName), path("*${genomeName}/${genomeName}.contigs.fasta")
     path("${genomeName}")
 
     script:
@@ -30,7 +29,7 @@ process UNICYCLER {
     --short2 ${genomeReads[1]} \
     --out ${genomeName} 
 
-    cp ${genomeName}/assembly.fasta ${genomeName}.contigs.fasta
+    cp ${genomeName}/assembly.fasta ${genomeName}/${genomeName}.contigs.fasta
     """
 
 
