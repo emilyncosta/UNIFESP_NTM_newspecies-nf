@@ -10,9 +10,7 @@ include { FASTQC as FASTQC_TRIMMED } from "./modules/fastqc/fastqc.nf" addParams
 include { MULTIQC as MULTIQC_TRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_trimmed", fastqcResultsDir: "${params.outdir}/fastqc_trimmed")
 include { MULTIQC as MULTIQC_UNTRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_untrimmed", fastqcResultsDir: "${params.outdir}/fastqc_untrimmed")
 include { UTILS_FILTER_CONTIGS } from "./modules/utils/filter_contigs/filter_contigs.nf"
-
-// TODO
-//include { SNIPPY } from "./modules/snippy/snippy.nf"
+include { SNIPPY } from "./modules/snippy/snippy.nf"
 
 
 
@@ -34,7 +32,7 @@ workflow WF_QUALITY_CHECK {
 workflow WF_MISC {
 
     sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.fromPath(java.nio.file.Paths.get(params.gbkFile))
+    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbkFile))
 
     FASTQC_UNTRIMMED(sra_ch)
     MULTIQC_UNTRIMMED(FASTQC_UNTRIMMED.out.flatten().collect())
@@ -46,6 +44,10 @@ workflow WF_MISC {
     UNICYCLER(TRIMMOMATIC.out)
     UTILS_FILTER_CONTIGS(UNICYCLER.out[0])
     QUAST(UTILS_FILTER_CONTIGS.out.collect(), refGbk_ch)
+
+    PROKKA(UNICYCLER.out[0], refGbk_ch)
+
+    SNIPPY(TRIMMOMATIC.out, refGbk_ch)
     
 }
 
@@ -54,7 +56,7 @@ workflow WF_MISC {
 workflow {
 
     sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.fromPath(Paths.get(params.gbkFile))
+    refGbk_ch = Channel.value(Paths.get(params.gbkFile))
 
     FASTQC_UNTRIMMED(sra_ch)
     MULTIQC_UNTRIMMED(FASTQC_UNTRIMMED.out.flatten().collect())
@@ -75,10 +77,3 @@ workflow {
 
 
 
-workflow WF_SNIPPY {
-    sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.fromPath(Paths.get(params.gbkFile))
-
-    TRIMMOMATIC(sra_ch)
-    SNIPPY(TRIMMOMATIC.out, refGbk_ch )
-}

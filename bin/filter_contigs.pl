@@ -1,4 +1,7 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
+
+# Author: Edson
+
 use strict;
 use warnings;
 

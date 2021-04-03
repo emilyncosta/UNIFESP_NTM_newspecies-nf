@@ -15,7 +15,7 @@ process QUAST {
 
     input:
     path(scaffoldFiles)
-    path(refGbk_ch)
+    path(reference)
 
     output:
     path("quast_results")

@@ -17,8 +17,7 @@ process SNIPPY {
     path("${genomeName}")
 
     script:
-//    ram = "${task.memory}".splilt(" ")[0]
-    ram = "15"
+    ram = "${task.memory}".split(" ")[0]
 
     """
 
