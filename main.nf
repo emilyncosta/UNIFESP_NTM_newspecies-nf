@@ -57,22 +57,8 @@ workflow WF_QUALITY_CHECK {
 workflow WF_MISC {
 
     sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbkFile))
-
-    FASTQC_UNTRIMMED(sra_ch)
-    MULTIQC_UNTRIMMED(FASTQC_UNTRIMMED.out.flatten().collect())
 
     TRIMMOMATIC(sra_ch)
-    FASTQC_TRIMMED(TRIMMOMATIC.out)
-    MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
-
-    UNICYCLER(TRIMMOMATIC.out)
-    UTILS_FILTER_CONTIGS(UNICYCLER.out[0])
-    QUAST(UTILS_FILTER_CONTIGS.out.collect(), refGbk_ch)
-
-    PROKKA(UNICYCLER.out[0], refGbk_ch)
-
-    SNIPPY(TRIMMOMATIC.out, refGbk_ch)
     
 }
 
