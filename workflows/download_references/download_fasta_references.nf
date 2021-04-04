@@ -196,6 +196,7 @@ ids = [
   
 
 process NCBI_ACC_DOWNLOAD {
+    tag "${genomeId}"
     cpus 2
     publishDir params.resultsDir, mode: 'move'
 
