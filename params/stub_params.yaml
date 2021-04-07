@@ -1,0 +1,6 @@
+outdir: "TEST"
+
+reads: "data/mock_data/001_R{1,2}.fastq.gz"
+
+gbk-file: "data/mock_data/ref01.gbk"
+

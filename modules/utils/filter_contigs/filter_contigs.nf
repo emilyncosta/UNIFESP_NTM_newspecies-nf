@@ -30,6 +30,8 @@ process UTILS_FILTER_CONTIGS {
 
     stub:
     """
+    echo "filter_contigs.pl 200 ${contig_fasta} > ${genomeName}.filtered.fasta"
+
     touch ${genomeName}.filtered.fasta
     """
 }

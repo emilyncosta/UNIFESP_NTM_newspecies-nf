@@ -28,6 +28,13 @@ process QUAST {
 
     """
 
+    stub:
+    """
+    echo "quast -r ${reference} -t ${task.cpus} ${scaffoldFiles}"
+
+    mkdir quast_results
+
+    """
 }
 
 workflow test {
