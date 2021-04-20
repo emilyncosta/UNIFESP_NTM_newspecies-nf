@@ -7,7 +7,6 @@ params.shouldPublish = true
 process SNIPPY {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
-    container 'quay.io/biocontainers/snippy:4.6.0--0'
 
     input:
     tuple val(genomeName),  path(genomeReads)

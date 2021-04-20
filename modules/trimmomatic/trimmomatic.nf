@@ -9,9 +9,6 @@ params.shouldPublish = true
 process TRIMMOMATIC {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
-    container 'quay.io/biocontainers/trimmomatic:0.35--6'
-    cpus 4
-    memory "8 GB"
 
     input:
     tuple val(genomeName), path(genomeReads)

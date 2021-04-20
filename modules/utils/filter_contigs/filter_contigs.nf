@@ -9,9 +9,6 @@ params.shouldPublish = true
 process UTILS_FILTER_CONTIGS {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
-    container 'quay.io/biocontainers/perl-bioperl:1.7.2--pl526_11'
-    cpus 4
-    memory "8 GB"
 
     input:
     tuple val(genomeName), path(contig_fasta)
