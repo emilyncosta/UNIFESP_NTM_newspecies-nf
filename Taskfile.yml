@@ -5,8 +5,8 @@ version: '3'
 tasks:
   default:
     cmds:
-      - NXF_VER=21.04.0-SNAPSHOT nextflow run main.nf -params-file params/local.yml -resume -with-tower
+      - NXF_VER=21.04.0-EDGE nextflow run main.nf -params-file params/local.yml -resume -with-tower
 
   with_stubs:
     cmds:
-      - NXF_VER=21.04.0-SNAPSHOT nextflow run main.nf -params-file params/local.yml -resume -stub -with-tower
+      - NXF_VER=21.04.0-EDGE nextflow run main.nf -params-file params/local.yml -resume -stub -with-tower
