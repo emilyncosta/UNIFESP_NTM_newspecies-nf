@@ -23,15 +23,15 @@ This is the complete workflow of this pipeline, the tool integration aims on a g
 2. Run it!
 
 ```
-	nextflow run https://github.com/bioinformatics-lab/camila_sao_paulo_nf.git --reads $READ --gbkFile $GBK --outdir $OUTDIR
+	nextflow run https://github.com/bioinformatics-lab/camila_sao_paulo_nf.git --reads $READs_PATTERN --gbkFile $GBK_FILE --outdir $OUTDIR
 
 ```
 
-$READ = STR, replace for your reads location. You can write using READ_{1,2}.fastq.gz or READ_1.fastq.gz READ_2.fastq.gz 
+$READS_PATTERN = STR, replace for your reads location. You can write using READ_{1,2}.fastq.gz or READ_1.fastq.gz READ_2.fastq.gz 
 
-$GBK = STR, replace for your reference gbk lcation.
+$GBK_FILE = STR, replace for your reference gbk file location.
 
-$OUDIR = STR, replace for the name of your desired output directory.
+$OUTDIR = STR, replace for the name of your desired output directory.
 
 ## Configuration Profiles.
 
@@ -52,7 +52,7 @@ This Pipeline can be launched on `Tower`, please refer to [Tower launch document
 
 When launching from `Tower`, please update and use the `params.yml` file contents.
 
-## stub-run
+## Mock execution using stub-run
 This project has the `-stub-run` feature, that can be used for testing propouse, it can be used on `Tower` with the Advanced settings on launch. You can also test it locally, using the following command:
 
 ```
