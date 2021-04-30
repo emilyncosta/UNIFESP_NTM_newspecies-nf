@@ -1,7 +1,7 @@
 # camila_sao_paulo nextflow pipeline
 A pipeline for Genome Assembly, Genome Anotation and Variant Calling with quality evaluation, using .fastq files and a reference genome as input.
 
-## Requirements
+## Minimal requirements (for local execution)
 
 * Nextflow VERSION > 20.11
 * Java 8
