@@ -8,10 +8,6 @@ params.shouldPublish = true
 
 process QUAST {
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
-    container 'quay.io/biocontainers/quast:5.0.2--py37pl526hb5aa323_2'
-    cpus 8
-    memory "15 GB"
-
 
     input:
     path(scaffoldFiles)
@@ -28,6 +24,13 @@ process QUAST {
 
     """
 
+    stub:
+    """
+    echo "quast -r ${reference} -t ${task.cpus} ${scaffoldFiles}"
+
+    mkdir quast_results
+
+    """
 }
 
 workflow test {

@@ -8,10 +8,6 @@ process UNICYCLER {
     tag "${genomeName}"
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
 
-    container 'quay.io/biocontainers/unicycler:0.4.8--py38h8162308_3'
-    cpus 8
-    memory "15 GB"
-
     input:
     tuple val(genomeName),  path(genomeReads)
 
@@ -35,8 +31,16 @@ process UNICYCLER {
 
     stub:
     """
+    echo "unicycler  \
+    -t ${task.cpus} \
+    --keep 0 \
+    --short1 ${genomeReads[0]} \
+    --short2 ${genomeReads[1]} \
+    --out ${genomeName}"
+
+    
     mkdir ${genomeName}
-    touch ${genomeName}.contigs.fasta
+    touch ${genomeName}/${genomeName}.contigs.fasta
 
     """
 
