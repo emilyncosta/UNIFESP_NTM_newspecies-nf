@@ -1,7 +1,7 @@
 nextflow.enable.dsl = 2
 
 include { TRIMMOMATIC } from "./modules/trimmomatic/trimmomatic.nf"
-// include { SPADES } from "./modules/spades/spades.nf"
+include { SPADES } from "./modules/spades/spades.nf"
 include { PROKKA } from "./modules/prokka/prokka.nf"
 include { QUAST } from "./modules/quast/quast.nf"
 include { UNICYCLER } from "./modules/unicycler/unicycler.nf"
@@ -39,7 +39,7 @@ workflow {
 
 
 
-workflow WF_QUALITY_CHECK {
+workflow QUALITY_CHECK_WF {
 
     sra_ch = Channel.fromFilePairs(params.reads)
 
@@ -54,7 +54,20 @@ workflow WF_QUALITY_CHECK {
 }
 
 
-workflow WF_MISC {
+workflow SPADES_QUAST_WF {
+
+    sra_ch = Channel.fromFilePairs(params.reads)
+    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbkFile))
+
+    TRIMMOMATIC(sra_ch)
+    SPADES(TRIMMOMATIC.out)
+    UTILS_FILTER_CONTIGS(SPADES.out)
+    QUAST(UTILS_FILTER_CONTIGS.out.collect(), refGbk_ch)
+
+}
+
+
+workflow MISC_WF {
 
     sra_ch = Channel.fromFilePairs(params.reads)
 
