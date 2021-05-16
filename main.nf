@@ -64,10 +64,12 @@ workflow SPADES_QUAST_WF {
     UTILS_FILTER_CONTIGS(SPADES.out)
     QUAST(UTILS_FILTER_CONTIGS.out.collect(), refGbk_ch)
 
+    PROKKA(SPADES.out[0], refGbk_ch)
+
 }
 
 
-workflow MISC_WF {
+workflow TEMP_WF {
 
     sra_ch = Channel.fromFilePairs(params.reads)
 
