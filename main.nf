@@ -37,8 +37,10 @@ workflow {
 }
 
 
+/*
+TODO: We can extract this workflow to generalize it as a standard workflow
+*/
 
-// TODO: We can extract this workflow to generalize it as a standard workflow
 workflow QUALITY_CHECK_WF {
 
     sra_ch = Channel.fromFilePairs(params.reads)
@@ -53,8 +55,10 @@ workflow QUALITY_CHECK_WF {
 
 }
 
-// NOTE: By 16-05-2021 we have decided to rely upon Spades, due to Edson's experience
-// with Unicycler.
+/*
+NOTE: By 16-05-2021 we have decided to rely upon Spades, due to Edson's experience
+with Unicycler.
+*/
 workflow SPADES_QUAST_WF {
 
     sra_ch = Channel.fromFilePairs(params.reads)
@@ -68,16 +72,3 @@ workflow SPADES_QUAST_WF {
     PROKKA(SPADES.out[0], refGbk_ch)
 
 }
-
-
-workflow TEMP_WF {
-
-    sra_ch = Channel.fromFilePairs(params.reads)
-
-    TRIMMOMATIC(sra_ch)
-    
-}
-
-
-
-
