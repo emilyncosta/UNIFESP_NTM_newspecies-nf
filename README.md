@@ -1,10 +1,10 @@
 # camila_sao_paulo nextflow pipeline
-A pipeline for Genome Assembly, Genome Anotation and Variant Calling with quality evaluation, using .fastq files and a reference genome as input.
+A pipeline for Genome Assembly, Genome Anotation and Variant Calling with quality evaluation, using `.fastq` files and a reference genome as input.
 
 ## Minimal requirements (for local execution)
 
-* Nextflow VERSION > 20.11
-* Java 8
+* Nextflow 
+* Java
 * Docker
 
 ## Pipeline workflow
@@ -57,6 +57,7 @@ This project has the `-stub-run` feature, that can be used for testing propouse,
 
 ```
 bash data/mock_data/generate_mock_data.sh
+
 nextflow run main.nf \
 		 -params-file stub_params.yaml \
 		 -stub-run
