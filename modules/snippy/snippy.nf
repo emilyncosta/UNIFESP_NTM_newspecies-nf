@@ -9,7 +9,7 @@ process SNIPPY {
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
 
     input:
-    tuple val(genomeName),  path(genomeReads)
+    tuple val(genomeName), path(genomeReads)
     path(refGbk)
 
     output:

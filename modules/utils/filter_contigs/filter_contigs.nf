@@ -1,4 +1,4 @@
-nextflow.enable.dsl= 2
+nextflow.enable.dsl = 2
 
 
 params.saveMode = 'copy'
@@ -12,11 +12,11 @@ process UTILS_FILTER_CONTIGS {
 
     input:
     tuple val(genomeName), path(contig_fasta)
- 
+
 
     output:
     path("*filtered.fasta")
- 
+
 
     script:
 
@@ -36,9 +36,9 @@ process UTILS_FILTER_CONTIGS {
 workflow test {
 
 
-input_ch = Channel.of(["123_S4_L001", "${launchDir}/test_data/123_S4_L001.fasta"],
-                      ["340_S6_L001", "${launchDir}/test_data/340_S6_L001.fasta"])
-UTILS_FILTER_CONTIGS(input_ch)
+    input_ch = Channel.of(["123_S4_L001", "${launchDir}/test_data/123_S4_L001.fasta"],
+            ["340_S6_L001", "${launchDir}/test_data/340_S6_L001.fasta"])
+    UTILS_FILTER_CONTIGS(input_ch)
 
-    
+
 }

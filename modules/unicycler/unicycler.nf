@@ -9,7 +9,7 @@ process UNICYCLER {
     publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
 
     input:
-    tuple val(genomeName),  path(genomeReads)
+    tuple val(genomeName), path(genomeReads)
 
     output:
     tuple val(genomeName), path("*${genomeName}/${genomeName}.contigs.fasta")
