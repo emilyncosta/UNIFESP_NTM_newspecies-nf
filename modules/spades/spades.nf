@@ -13,23 +13,22 @@ process SPADES {
     tuple val(genomeName), path(genomeReads)
 
     output:
-    tuple val(genomeName), path("${genomeName}_scaffolds.fasta")
+    tuple val(genomeName), path("*_contigs.fasta")
 
 
     script:
 
     """
     spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 ${genomeReads[0]} --pe1-2 ${genomeReads[1]} -o ${genomeName} -t ${task.cpus}
-    cp ${genomeName}/scaffolds.fasta ${genomeName}_scaffolds.fasta 
+    cp ${genomeName}/contigs.fasta ${genomeName}_contigs.fasta
     """
 
     stub:
     """
-    echo "spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 ${genomeReads[0]} --pe1-2 ${genomeReads[1]} -o ${genomeName} -t ${task.cpus}"
-    echo "cp ${genomeName}/scaffolds.fasta ${genomeName}_scaffolds.fasta"
+    echo  "spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 ${genomeReads[0]} --pe1-2 ${genomeReads[1]} -o ${genomeName} -t ${task.cpus}"
 
-    touch ${genomeName}_scaffolds.fasta
-
+    mkdir ${genomeName}
+    touch ${genomeName}/${genomeName}_contigs.fasta
     """
 }
 
