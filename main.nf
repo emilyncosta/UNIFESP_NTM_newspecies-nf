@@ -11,6 +11,7 @@ include { MULTIQC as MULTIQC_TRIMMED } from "./modules/multiqc/multiqc.nf" addPa
 include { MULTIQC as MULTIQC_UNTRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_untrimmed", fastqcResultsDir: "${params.outdir}/fastqc_untrimmed")
 include { UTILS_FILTER_CONTIGS } from "./modules/utils/filter_contigs/filter_contigs.nf"
 include { SNIPPY } from "./modules/snippy/snippy.nf"
+include { ORTHOANI } from "./modules/orthoani/orthoani.nf"
 
 
 workflow {
@@ -62,13 +63,23 @@ with Unicycler.
 workflow SPADES_QUAST_WF {
 
     sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbkFile))
 
     TRIMMOMATIC(sra_ch)
     SPADES(TRIMMOMATIC.out)
     UTILS_FILTER_CONTIGS(SPADES.out)
-    QUAST(UTILS_FILTER_CONTIGS.out.collect(), refGbk_ch)
+    QUAST(UTILS_FILTER_CONTIGS.out.collect(), params.gbkFile)
 
-    PROKKA(SPADES.out[0], refGbk_ch)
+    PROKKA(SPADES.out[0], params.gbkFile)
+
+}
+
+
+workflow COMPUTE_SIMILARITY_WF {
+
+    camila_fasta_ch = Channel.fromPath("${baseDir}/data/myc_fasta/*fasta")
+
+    tortolli_fasta_ch = Channel.fromPath("${baseDir}/data/tortolli_fasta/*fasta")
+
+    ORTHOANI()
 
 }
