@@ -78,7 +78,7 @@ workflow COMPUTE_SIMILARITY_WF {
 
     camila_fasta_ch = Channel.fromPath("${baseDir}/data/myc_fasta/*fasta")
 
-    tortolli_fasta_ch = Channel.fromPath("${baseDir}/data/tortolli_fasta/*fasta")
+    tortolli_fasta_ch = Channel.fromPath("${baseDir}/data/tortolli_fasta/*fna")
 
     orthoani_ch = camila_fasta_ch.combine(tortolli_fasta_ch)
 
