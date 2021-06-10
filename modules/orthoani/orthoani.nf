@@ -23,6 +23,9 @@ process ORTHOANI {
     def fasta2Name = fasta2.split("\\.fna")[0]
 
     '''
+
+    mv !{fasta2} !{fasta2}.fasta
+
     java -jar !{orthoani_jar} -blastplus_dir !{blastplus_dir} -fasta1 !{fasta1} -fasta2 !{fasta2}.fasta > !{fasta1Name}_!{fasta2Name}.txt
 
     cat !{fasta1Name}_!{fasta2Name}.txt  | grep 'OrthoANI' > !{fasta1Name}_!{fasta2Name}.result.txt
