@@ -80,6 +80,8 @@ workflow COMPUTE_SIMILARITY_WF {
 
     tortolli_fasta_ch = Channel.fromPath("${baseDir}/data/tortolli_fasta/*fasta")
 
-    ORTHOANI()
+    orthoani_ch = camila_fasta_ch.combine(tortolli_fasta_ch)
+
+    ORTHOANI(params.blastplus_dir, params.orthoani_jar, orthoani_ch)
 
 }
