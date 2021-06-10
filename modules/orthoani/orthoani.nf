@@ -39,7 +39,7 @@ process ORTHOANI {
     stub:
     """
 
-    java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -fasta1 ${fasta1} -fasta2 ${fasta2}.fasta > ${fasta1}_${fasta}.txt
+    echo "java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -fasta1 ${fasta1} -fasta2 ${fasta2}.fasta > ${fasta1}_${fasta}.txt"
 
     touch ${fasta1}_${fasta2}.result.txt
 

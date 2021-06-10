@@ -57,7 +57,7 @@ workflow QUALITY_CHECK_WF {
 }
 
 /*
-NOTE: By 16-05-2021 we have decided to rely upon Spades, due to Edson's experience
+NOTE: By 16-05-2021 we have decided to rely upon Spades, due to Edson's bad experience
 with Unicycler.
 */
 workflow SPADES_QUAST_WF {
@@ -77,11 +77,15 @@ workflow SPADES_QUAST_WF {
 workflow COMPUTE_SIMILARITY_WF {
 
     camila_fasta_ch = Channel.fromPath("${baseDir}/data/myc_fasta/*fasta")
-
     tortolli_fasta_ch = Channel.fromPath("${baseDir}/data/tortolli_fasta/*fna")
-
     orthoani_ch = camila_fasta_ch.combine(tortolli_fasta_ch)
 
     ORTHOANI(params.blastplus_dir, params.orthoani_jar, orthoani_ch)
+
+    UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out)
+
+    UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
+        UTILS_REFINE_ORTHOANI_RESULT.collect()
+    )
 
 }
