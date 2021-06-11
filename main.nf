@@ -84,7 +84,7 @@ workflow COMPUTE_SIMILARITY_WF {
 
     ORTHOANI(params.blastplus_dir, params.orthoani_jar, orthoani_ch)
 
-    UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out)
+    UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
 
     UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
         UTILS_REFINE_ORTHOANI_RESULT.collect()

@@ -17,6 +17,7 @@ process ORTHOANI {
     tuple path(fasta1), path(fasta2)
 
     output:
+    path('*result.txt')
     path('*txt')
 
 
