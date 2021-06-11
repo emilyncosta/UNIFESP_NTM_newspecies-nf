@@ -13,6 +13,8 @@ include { UTILS_FILTER_CONTIGS } from "./modules/utils/filter_contigs/filter_con
 include { SNIPPY } from "./modules/snippy/snippy.nf"
 include { ORTHOANI } from "./modules/orthoani/orthoani.nf"
 
+include {UTILS_REFINE_ORTHOANI_RESULT} from "./modules/utils/refine_orthoani_result/refine_orthoani_result.nf"
+include {UTILS_COMBINE_ORTHOANI_RESULTS_TSV} from "./modules/utils/combine_orthoani_results_tsv/combine_orthoani_results_tsv.nf"
 
 workflow {
 
