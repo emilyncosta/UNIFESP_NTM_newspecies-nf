@@ -24,9 +24,8 @@ process ORTHOANI {
     script:
 
     """
-    mv ${fasta2} ${fasta2}.fasta
 
-    java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -num_threads ${task.cpus} -fasta1 ${fasta1} -fasta2 ${fasta2}.fasta > ${fasta1}_${fasta2}.txt
+    java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -num_threads ${task.cpus} -fasta1 ${fasta1} -fasta2 ${fasta2} > ${fasta1}_${fasta2}.txt
 
     cat ${fasta1}_${fasta2}.txt  | grep 'OrthoANI' > ${fasta1}_${fasta2}.result.txt
 
@@ -39,7 +38,7 @@ process ORTHOANI {
     stub:
     """
 
-    echo "java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -fasta1 ${fasta1} -fasta2 ${fasta2}.fasta > ${fasta1}_${fasta}.txt"
+    echo "java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -fasta1 ${fasta1} -fasta2 ${fasta2} > ${fasta1}_${fasta}.txt"
 
     touch ${fasta1}_${fasta2}.result.txt
 
