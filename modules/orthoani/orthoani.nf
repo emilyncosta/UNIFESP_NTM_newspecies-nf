@@ -23,8 +23,8 @@ process ORTHOANI {
 
     script:
 
-//    mv ${fasta2} ${fasta2}.fasta
     """
+    mv ${fasta2} ${fasta2}.fasta
 
     java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -num_threads ${task.cpus} -fasta1 ${fasta1} -fasta2 ${fasta2}.fasta > ${fasta1}_${fasta2}.txt
 
