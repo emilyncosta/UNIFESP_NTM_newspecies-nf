@@ -81,9 +81,7 @@ workflow COMPUTE_SIMILARITY_WF {
 
     fasta_ch = Channel.fromPath("${baseDir}/data/final_fasta/*fasta")
 
-    orthoani_ch = fasta_ch
-        .combine(fasta_ch)
-        .filter { a,b -> a != b }
+    orthoani_ch = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
 
     ORTHOANI(params.blastplus_dir, params.orthoani_jar, orthoani_ch)
 

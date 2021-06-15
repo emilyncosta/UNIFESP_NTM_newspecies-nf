@@ -1,5 +1,5 @@
-reads: "data/full_data/Myc_Raw_Data/*_R{1,2}_001.fastq.gz"
-outdir: "results"
+reads: "${baseDir}/data/full_data/Myc_Raw_Data/*_R{1,2}_001.fastq.gz"
+outdir: "${baseDir}/results"
 gbkFile: "${baseDir}/data/full_data/NZ_LT906469.1.fasta"
 orthoani_jar: "${baseDir}/resources/OAT_cmd.jar"
 blastplus_dir: "/root/miniconda3/envs/orthoani/bin/"
