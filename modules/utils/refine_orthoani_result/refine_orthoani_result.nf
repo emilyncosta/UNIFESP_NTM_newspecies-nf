@@ -18,8 +18,12 @@ process UTILS_REFINE_ORTHOANI_RESULT {
 
     shell:
 
+    // TODO: Make the insertion of new line elegant
+
     '''
     awk '$1=$1' ORS='\t' !{orthoani_result} > !{orthoani_result}.tsv
+    echo "
+    " >>  !{orthoani_result}.tsv
     '''
 
     stub:
