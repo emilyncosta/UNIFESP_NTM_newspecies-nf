@@ -6,8 +6,8 @@ params
 ================================
 */
 
-params.resultsDir = 'results/fastaFiles'
-params.apiKey = System.getenv("NCBI_API_KEY")
+params.results_dir = 'results/fastaFiles'
+params.api_key = "${NCBI_API_KEY}"
 
 /*
 ================================
@@ -198,7 +198,7 @@ process NCBI_ACC_DOWNLOAD {
     tag "${genomeId}"
     errorStrategy "ignore"
     cpus 2
-    publishDir params.resultsDir, mode: 'move'
+    publishDir params.results_dir, mode: 'move'
 
     input:
     val(genomeId)
@@ -224,4 +224,3 @@ workflow DOWNLOAD_REFERENCES {
     NCBI_ACC_DOWNLOAD(sra_ch.flatten())
 
 }
-

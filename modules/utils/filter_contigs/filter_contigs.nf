@@ -1,14 +1,14 @@
 nextflow.enable.dsl = 2
 
 
-params.saveMode = 'copy'
-params.resultsDir = "${params.outdir}/filter_contigs"
-params.shouldPublish = true
+params.save_mode = 'copy'
+params.results_dir = "${params.outdir}/filter_contigs"
+params.should_publish = true
 
 
 process UTILS_FILTER_CONTIGS {
     tag "${genomeName}"
-    publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
+    publishDir params.results_dir, mode: params.save_mode, enabled: params.should_publish
 
     input:
     tuple val(genomeName), path(contig_fasta)

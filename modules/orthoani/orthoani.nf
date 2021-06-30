@@ -1,13 +1,13 @@
 nextflow.enable.dsl = 2
 
-params.resultsDir = "${params.outdir}/orthoani"
-params.saveMode = 'copy'
-params.shouldPublish = true
+params.results_dir = "${params.outdir}/orthoani"
+params.save_mode = 'copy'
+params.should_publish = true
 
 //NOTE Requires a conda env for blastp and license issue with OrthoANI
 process ORTHOANI {
     tag "${fasta1}_${fasta2}"
-    publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
+    publishDir params.results_dir, mode: params.save_mode, enabled: params.should_publish
     cpus 4
 
 

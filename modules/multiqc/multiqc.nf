@@ -1,13 +1,13 @@
 nextflow.enable.dsl = 2
 
-params.fastqcResultsDir = "${params.outdir}/fastqc"
-params.resultsDir = "${params.outdir}/multiqc"
-params.saveMode = 'copy'
-params.shouldPublish = true
+params.fastqc_resultsDir = "${params.outdir}/fastqc"
+params.results_dir = "${params.outdir}/multiqc"
+params.save_mode = 'copy'
+params.should_publish = true
 
 
 process MULTIQC {
-    publishDir params.resultsDir, mode: params.saveMode, enabled: params.shouldPublish
+    publishDir params.results_dir, mode: params.save_mode, enabled: params.should_publish
 
     input:
     path("*")

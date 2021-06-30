@@ -19,7 +19,7 @@ include {UTILS_COMBINE_ORTHOANI_RESULTS_TSV} from "./modules/utils/combine_ortho
 workflow {
 
     sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbkFile))
+    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbk_file))
 
     FASTQC_UNTRIMMED(sra_ch)
     MULTIQC_UNTRIMMED(FASTQC_UNTRIMMED.out.flatten().collect())
@@ -69,9 +69,9 @@ workflow SPADES_QUAST_WF {
     TRIMMOMATIC(sra_ch)
     SPADES(TRIMMOMATIC.out)
     UTILS_FILTER_CONTIGS(SPADES.out)
-    QUAST(UTILS_FILTER_CONTIGS.out.collect(), params.gbkFile)
+    QUAST(UTILS_FILTER_CONTIGS.out.collect(), params.gbk_file)
 
-    PROKKA(SPADES.out[0], params.gbkFile)
+    PROKKA(SPADES.out[0], params.gbk_file)
 
 }
 
