@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# Author: Edson
+# Author: Edson Machado (@edsonmachado)
 
 use strict;
 use warnings;
