@@ -98,5 +98,6 @@ workflow COMPUTE_SIMILARITY_WF {
 
 workflow CLASSIFICATION_WF {
 
-    CLASSIFY_TAXONOMY(TRIMMOMATIC.out, params.kraken2_db, params.kraken2_gram_stain)
+    reads_ch = Channel.fromFilePairs(params.reads)
+    CLASSIFY_TAXONOMY(reads_ch, params.kraken2_db, params.kraken2_gram_stain)
 }
