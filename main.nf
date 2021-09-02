@@ -16,6 +16,8 @@ include { ORTHOANI } from "./modules/orthoani/orthoani.nf"
 include {UTILS_REFINE_ORTHOANI_RESULT} from "./modules/utils/refine_orthoani_result/refine_orthoani_result.nf"
 include {UTILS_COMBINE_ORTHOANI_RESULTS_TSV} from "./modules/utils/combine_orthoani_results_tsv/combine_orthoani_results_tsv.nf"
 
+include { CLASSIFY_TAXONOMY } from "./workflows/classify_taxonomy/classify_taxonomy.nf"
+
 workflow {
 
     sra_ch = Channel.fromFilePairs(params.reads)
@@ -91,4 +93,10 @@ workflow COMPUTE_SIMILARITY_WF {
         UTILS_REFINE_ORTHOANI_RESULT.out.collect()
     )
 
+}
+
+
+workflow CLASSIFICATION_WF {
+
+    CLASSIFY_TAXONOMY(TRIMMOMATIC.out, params.kraken2_db, params.kraken2_gram_stain)
 }

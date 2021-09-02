@@ -1,0 +1,14 @@
+OAT Configuration File
+#Input Directory
+	name: /Users/eklavya/Downloads/OAT_Example_Genome_Set_mycoplasma
+#Output Directory
+	name: /Users/eklavya/Downloads
+#Blast Directory
+	name: /Users/eklavya/.pyenv/versions/miniconda3-latest/envs/orthoani/bin
+#Number of Threads
+	name: 1
+#Original ANI
+	bidirectional: true
+	mode: 1
+#GGDC
+	form: 1
