@@ -13,7 +13,7 @@ process UTILS_COMBINE_ORTHOANI_RESULTS_TSV {
 
 
     output:
-    path("*tsv")
+    path("orthoani_combined_result.tsv")
 
 
     script:
@@ -24,7 +24,6 @@ process UTILS_COMBINE_ORTHOANI_RESULTS_TSV {
 
     stub:
     """
-    touch ${orthoani_result}.tsv
-
+    touch orthoani_combined_result.tsv
     """
 }
