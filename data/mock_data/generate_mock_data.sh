@@ -5,9 +5,5 @@ touch ./data/mock_data/002_R1.fastq.gz
 touch ./data/mock_data/002_R2.fastq.gz
 touch ./data/mock_data/003_R1.fastq.gz
 touch ./data/mock_data/003_R2.fastq.gz
-touch ./data/mock_data/ref01.gbk
-touch ./data/mock_data/ref01.fasta
-touch ./data/mock_data/ref02.gbk
-touch ./data/mock_data/ref02.fasta
-touch ./data/mock_data/ref03.gbk
-touch ./data/mock_data/ref03.fasta
+touch ./data/mock_data/NZ_LT906469.1.fasta
+touch ./data/mock_data/OAT_cmd.jar
