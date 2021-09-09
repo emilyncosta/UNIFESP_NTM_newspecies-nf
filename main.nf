@@ -81,7 +81,7 @@ workflow SPADES_QUAST_WF {
 workflow COMPUTE_SIMILARITY_WF {
 
 
-    fasta_ch = Channel.fromPath("${baseDir}/data/final_fasta/*fasta")
+    fasta_ch = Channel.fromPath("${params.orthoani_fastas}")
 
     orthoani_ch = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
 
