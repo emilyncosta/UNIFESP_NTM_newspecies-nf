@@ -27,5 +27,6 @@ process UTILS_COMBINE_ORTHOANI_RESULTS_TSV {
     stub:
     """
     touch orthoani_combined_result.tsv
+
     """
 }
