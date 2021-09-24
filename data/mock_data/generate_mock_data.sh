@@ -7,3 +7,7 @@ touch ./data/mock_data/003_R1.fastq.gz
 touch ./data/mock_data/003_R2.fastq.gz
 touch ./data/mock_data/NZ_LT906469.1.fasta
 touch ./data/mock_data/OAT_cmd.jar
+touch ./data/mock_data/fasta_1.fasta
+touch ./data/mock_data/fasta_2.fasta
+touch ./data/mock_data/fasta_3.fasta
+touch ./data/mock_data/fasta_4.fasta
