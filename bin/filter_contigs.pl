@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# Author: Edson Machado (@edsonmachado)
+#NOTE: Sourced from from https://www.biostars.org/p/340723/
 
 use strict;
 use warnings;

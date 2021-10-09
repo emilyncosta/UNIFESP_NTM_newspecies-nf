@@ -7,12 +7,6 @@ A pipeline for Genome Assembly, Genome Anotation and Variant Calling with qualit
 * Java
 * Docker
 
-## Pipeline workflow
-
-![dag file](./resources/dag.png)
-
-This is the complete workflow of this pipeline, the tool integration aims on a good quality evaluation of all process, 
-
 ## Quick start
 
 ### Local execution

@@ -4,13 +4,11 @@ include { TRIMMOMATIC } from "./modules/trimmomatic/trimmomatic.nf"
 include { SPADES } from "./modules/spades/spades.nf"
 include { PROKKA } from "./modules/prokka/prokka.nf"
 include { QUAST } from "./modules/quast/quast.nf"
-include { UNICYCLER } from "./modules/unicycler/unicycler.nf"
 include { FASTQC as FASTQC_UNTRIMMED } from "./modules/fastqc/fastqc.nf" addParams(resultsDir: "${params.outdir}/fastqc_untrimmed")
 include { FASTQC as FASTQC_TRIMMED } from "./modules/fastqc/fastqc.nf" addParams(resultsDir: "${params.outdir}/fastqc_trimmed")
 include { MULTIQC as MULTIQC_TRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_trimmed", fastqcResultsDir: "${params.outdir}/fastqc_trimmed")
 include { MULTIQC as MULTIQC_UNTRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_untrimmed", fastqcResultsDir: "${params.outdir}/fastqc_untrimmed")
 include { UTILS_FILTER_CONTIGS } from "./modules/utils/filter_contigs/filter_contigs.nf"
-include { SNIPPY } from "./modules/snippy/snippy.nf"
 include { ORTHOANI } from "./modules/orthoani/orthoani.nf"
 
 include {UTILS_REFINE_ORTHOANI_RESULT} from "./modules/utils/refine_orthoani_result/refine_orthoani_result.nf"
@@ -29,15 +27,6 @@ workflow {
     TRIMMOMATIC(sra_ch)
     FASTQC_TRIMMED(TRIMMOMATIC.out)
     MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
-
-    UNICYCLER(TRIMMOMATIC.out)
-    UTILS_FILTER_CONTIGS(UNICYCLER.out[0])
-    QUAST(UTILS_FILTER_CONTIGS.out.collect(), refGbk_ch)
-
-    PROKKA(UNICYCLER.out[0], refGbk_ch)
-
-    SNIPPY(TRIMMOMATIC.out, refGbk_ch)
-    
 
 }
 
@@ -89,7 +78,7 @@ workflow COMPUTE_SIMILARITY_WF {
 
     UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
 
-    //FIXME
+    //FIXME Basically the script fails to parse and we just need to run the content of the script on the results tsv files from the above step.
     // UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
     //     UTILS_REFINE_ORTHOANI_RESULT.out.collect()
     // )

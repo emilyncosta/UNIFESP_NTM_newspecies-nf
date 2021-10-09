@@ -17,14 +17,14 @@ process PROKKA {
 
     script:
 
+    //NOTE: Updated as per Edson's email on 5/Oct/2021
     """
-    prokka --outdir ${genomeName} --prefix $genomeName --cpus ${task.cpus} --proteins ${reference} ${bestContig}
+    prokka --outdir ${genomeName} --compliant --kingdom Bacteria --genus Mycobacterium --prefix $genomeName --cpus ${task.cpus} --proteins ${reference} ${bestContig}
     """
 
     stub:
     """
     echo "prokka --outdir ${genomeName} --prefix $genomeName --cpus ${task.cpus} --proteins ${reference} ${bestContig}"
-
 
     mkdir ${genomeName}
     

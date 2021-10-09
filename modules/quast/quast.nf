@@ -32,18 +32,3 @@ process QUAST {
 
     """
 }
-
-workflow test {
-    include { TRIMMOMATIC } from "../trimmomatic/trimmomatic.nf"
-    include { SPADES } from "../spades/spades.nf"
-
-    input_reads_ch = Channel.fromFilePairs("$launchDir/data/mock_data/*_{R1,R2}*fastq.gz")
-
-    TRIMMOMATIC(input_reads_ch)
-
-    SPADES(TRIMMOMATIC.out)
-
-    QUAST(SPADES.out.collect())
-
-}
-
