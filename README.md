@@ -33,3 +33,7 @@ nextflow run main.nf -params-file params/local.yml
 ## Configuration Profiles.
 
 You can use diferent profiles for this pipeline, based on the computation enviroment at your disposal. Here are the Avaliable Profiles in `conf/` folder.
+
+## License
+
+All Nextflow code within the repo is licensed under the liberal MIT license. For the code used in `bin/`, we defer the to same license as used by the original authors.
