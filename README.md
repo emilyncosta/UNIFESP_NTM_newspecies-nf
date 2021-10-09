@@ -36,4 +36,4 @@ You can use diferent profiles for this pipeline, based on the computation enviro
 
 ## License
 
-All Nextflow code within the repo is licensed under the liberal MIT license. For the code used in `bin/`, we defer the to same license as used by the original authors.
+All Nextflow code within the repo is licensed under the liberal MIT license. For the code used in `bin/` and `resources/`, we defer the to same license as used by the original authors.
