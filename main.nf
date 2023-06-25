@@ -1,93 +1,52 @@
+#!/usr/bin/env nextflow
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    UNIFESP_LABMICOBACT/ntm_mterrae_nf
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Github : https://github.com/UNIFESP_LABMICOBACT/ntm_mterrae_nf----------------------------------------------------------------------------------------
+*/
+
 nextflow.enable.dsl = 2
 
-include { TRIMMOMATIC } from "./modules/trimmomatic/trimmomatic.nf"
-include { SPADES } from "./modules/spades/spades.nf"
-include { PROKKA } from "./modules/prokka/prokka.nf"
-include { QUAST } from "./modules/quast/quast.nf"
-include { FASTQC as FASTQC_UNTRIMMED } from "./modules/fastqc/fastqc.nf" addParams(resultsDir: "${params.outdir}/fastqc_untrimmed")
-include { FASTQC as FASTQC_TRIMMED } from "./modules/fastqc/fastqc.nf" addParams(resultsDir: "${params.outdir}/fastqc_trimmed")
-include { MULTIQC as MULTIQC_TRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_trimmed", fastqcResultsDir: "${params.outdir}/fastqc_trimmed")
-include { MULTIQC as MULTIQC_UNTRIMMED } from "./modules/multiqc/multiqc.nf" addParams(resultsDir: "${params.outdir}/multiqc_untrimmed", fastqcResultsDir: "${params.outdir}/fastqc_untrimmed")
-include { UTILS_FILTER_CONTIGS } from "./modules/utils/filter_contigs/filter_contigs.nf"
-include { ORTHOANI } from "./modules/orthoani/orthoani.nf"
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    VALIDATE & PRINT PARAMETER SUMMARY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
 
-include {UTILS_REFINE_ORTHOANI_RESULT} from "./modules/utils/refine_orthoani_result/refine_orthoani_result.nf"
-include {UTILS_COMBINE_ORTHOANI_RESULTS_TSV} from "./modules/utils/combine_orthoani_results_tsv/combine_orthoani_results_tsv.nf"
+WorkflowMain.initialise(workflow, params, log)
 
-include { CLASSIFY_TAXONOMY } from "./workflows/classify_taxonomy/classify_taxonomy.nf"
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    NAMED WORKFLOW FOR PIPELINE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
 
+include { NTM_MTERRAE_NF } from './workflows/ntm_mterrae_nf'
+
+//
+// WORKFLOW: Run main UNIFESP_LABMICOBACT/ntm_mterrae_nf analysis pipeline
+//
+workflow UNIFESP_LABMICOBACT {
+    NTM_MTERRAE_NF ()
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    RUN ALL WORKFLOWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+//
+// WORKFLOW: Execute a single named workflow for the pipeline
+// See: https://github.com/nf-core/rnaseq/issues/619
+//
 workflow {
-
-    sra_ch = Channel.fromFilePairs(params.reads)
-    refGbk_ch = Channel.value(java.nio.file.Paths.get(params.gbk_file))
-
-    FASTQC_UNTRIMMED(sra_ch)
-    MULTIQC_UNTRIMMED(FASTQC_UNTRIMMED.out.flatten().collect())
-
-    TRIMMOMATIC(sra_ch)
-    FASTQC_TRIMMED(TRIMMOMATIC.out)
-    MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
-
-}
-
-
-/*
-TODO: We can extract this workflow to generalize it as a standard workflow
-*/
-
-workflow QUALITY_CHECK_WF {
-
-    sra_ch = Channel.fromFilePairs(params.reads)
-
-    FASTQC_UNTRIMMED(sra_ch)
-    MULTIQC_UNTRIMMED(FASTQC_UNTRIMMED.out.flatten().collect())
-
-    TRIMMOMATIC(sra_ch)
-    FASTQC_TRIMMED(TRIMMOMATIC.out)
-    MULTIQC_TRIMMED(FASTQC_TRIMMED.out.flatten().collect())
-
-
+    UNIFESP_LABMICOBACT ()
 }
 
 /*
-NOTE: By 16-05-2021 we have decided to rely upon Spades, due to Edson's bad experience
-with Unicycler.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    THE END
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-workflow SPADES_QUAST_WF {
-
-    sra_ch = Channel.fromFilePairs(params.reads)
-
-    TRIMMOMATIC(sra_ch)
-    SPADES(TRIMMOMATIC.out)
-    UTILS_FILTER_CONTIGS(SPADES.out)
-    QUAST(UTILS_FILTER_CONTIGS.out.collect(), params.gbk_file)
-
-    PROKKA(SPADES.out[0], params.gbk_file)
-
-}
-
-
-workflow COMPUTE_SIMILARITY_WF {
-
-
-    fasta_ch = Channel.fromPath("${params.orthoani_fastas}")
-
-    orthoani_ch = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
-
-    ORTHOANI(params.blastplus_dir, params.orthoani_jar, orthoani_ch)
-
-    UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
-
-    //FIXME Basically the script fails to parse and we just need to run the content of the script on the results tsv files from the above step.
-    // UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
-    //     UTILS_REFINE_ORTHOANI_RESULT.out.collect()
-    // )
-
-}
-
-
-workflow CLASSIFICATION_WF {
-
-    reads_ch = Channel.fromFilePairs(params.reads)
-    CLASSIFY_TAXONOMY(reads_ch, params.kraken2_db, params.kraken2_gram_stain)
-}

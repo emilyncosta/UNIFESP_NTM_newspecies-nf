@@ -1,8 +1,0 @@
-reads: "${baseDir}/data/full_data/Myc_Raw_Data/*_R{1,2}_001.fastq.gz"
-outdir: "${baseDir}/results"
-gbk_file: "${baseDir}/data/full_data/NZ_LT906469.1.fasta"
-orthoani_jar: "${baseDir}/resources/OAT_cmd.jar"
-orthoani_fastas: "${baseDir}/data/final_fasta/*fasta"
-blastplus_dir: "/root/miniconda3/envs/orthoani/bin/"
-kraken2_db: "${baseDir}/resources/minikraken2_v2_8GB_201904_UPDATE/"
-kraken2_gram_stain: "${baseDir}/resources/gram_stain.txt"
