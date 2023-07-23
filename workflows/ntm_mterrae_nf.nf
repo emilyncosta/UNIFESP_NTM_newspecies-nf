@@ -48,6 +48,8 @@ include { INPUT_CHECK } from '../subworkflows/local/input_check'
 //
 // MODULE: Installed directly from nf-core/modules
 //
+include { TRIMMOMATIC                 } from '../modules/nf-core/trimmomatic/main'
+include { SPADES                      } from '../modules/nf-core/spades/main'
 include { FASTQC                      } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                     } from '../modules/nf-core/multiqc/main'
 include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoftwareversions/main'
@@ -84,6 +86,26 @@ workflow NTM_MTERRAE_NF {
     CUSTOM_DUMPSOFTWAREVERSIONS (
         ch_versions.unique().collectFile(name: 'collated_versions.yml')
     )
+
+    //NTM_MTERRAE_NF
+    TRIMMOMATIC (
+        ch_input,
+        params.adapter
+    )
+
+
+    ch_in_spades = TRIMMOMATIC.out.trimmed_reads
+                        .map { m,f -> [m,f,[],[]]}
+                        .debug(tag:'ch_in_spades')
+
+/*
+    SPADES (
+        ch_in_spades,
+        [],
+        []
+    )
+*/
+
 
     //
     // MODULE: MultiQC

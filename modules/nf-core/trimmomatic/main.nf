@@ -9,6 +9,7 @@ process TRIMMOMATIC {
 
     input:
     tuple val(meta), path(reads)
+    path(adapter)
 
     output:
     tuple val(meta), path("*.paired.trim*.fastq.gz")   , emit: trimmed_reads
