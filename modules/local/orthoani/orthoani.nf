@@ -1,5 +1,5 @@
 process ORTHOANI {
-    tag '$bam'
+    tag '$fasta1 - $fasta2'
     label 'process_medium'
 
     conda "bioconda::java-jdk=8.0.112"
@@ -43,7 +43,10 @@ process ORTHOANI {
     def args = task.ext.args ?: ''
     
     """
-    touch ${prefix}.bam
+    echo "java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -fasta1 ${fasta1} -fasta2 ${fasta2} > ${fasta1}_${fasta2}.txt"
+
+    touch ${fasta1}_${fasta2}.result.txt
+
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
