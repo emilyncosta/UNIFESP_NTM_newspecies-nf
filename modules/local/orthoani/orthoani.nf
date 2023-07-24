@@ -1,5 +1,5 @@
 process ORTHOANI {
-    tag '$fasta1 - $fasta2'
+    tag "$fasta1 - $fasta2"
     label 'process_medium'
 
     conda "bioconda::java-jdk=8.0.112"
