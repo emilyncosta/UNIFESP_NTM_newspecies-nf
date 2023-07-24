@@ -37,7 +37,7 @@ process ORTHOANI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        orthoani: \$(echo \$(java -jar OAT_cmd.jar  2>&1) | grep "CALCULATOR" | sed "s/.*CALCULATOR //" | sed "s/\]//")
+        orthoani: 1.40
     END_VERSIONS
     """
 
