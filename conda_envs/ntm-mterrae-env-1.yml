@@ -1,0 +1,10 @@
+name: ntm-mterrae-env-1
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bioconda::java-jdk=8.0.112
+  - bioconda::blast=2.14.0
+  - conda-forge::bc=1.07.1
+  - conda-forge::sed=4.8
+  - conda-forge::grep=3.11

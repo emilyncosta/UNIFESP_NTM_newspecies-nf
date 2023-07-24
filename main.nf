@@ -50,3 +50,22 @@ workflow {
     THE END
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
+include { ORTHOANI } from './modules/local/orthoani/orthoani.nf'
+
+workflow COMPUTE_SIMILARITY_WF {
+
+    fasta_ch = Channel.fromPath("${params.orthoani_fastas}")
+
+    orthoani_ch = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
+
+    ORTHOANI(params.orthoani_jar, orthoani_ch)
+
+    //UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
+
+    //FIXME Basically the script fails to parse and we just need to run the content of the script on the results tsv files from the above step.
+    // UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
+    //     UTILS_REFINE_ORTHOANI_RESULT.out.collect()
+    // )
+
+}

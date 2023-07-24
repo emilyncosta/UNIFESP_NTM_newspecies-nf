@@ -8,7 +8,6 @@ process ORTHOANI {
         'biocontainers/java-jdk:8.0.112--1' }"
 
     input:
-    val(blastplus_dir)
     path(orthoani_jar)
     tuple path(fasta1), path(fasta2)
 
@@ -25,8 +24,11 @@ process ORTHOANI {
     def args = task.ext.args ?: ''
     
     """
-
-    java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -num_threads ${task.cpus} -fasta1 ${fasta1} -fasta2 ${fasta2} > ${fasta1}_${fasta2}.txt
+    java -jar ${orthoani_jar} \
+        -blastplus_dir /opt/conda/bin/ \
+        -fasta1 ${fasta1} \
+        -fasta2 ${fasta2} \
+    > ${fasta1}_${fasta2}.txt
 
     cat ${fasta1}_${fasta2}.txt  | grep 'OrthoANI' > ${fasta1}_${fasta2}.result.txt
 
@@ -35,7 +37,7 @@ process ORTHOANI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        orthoani: \$(echo \$(samtools --version 2>&1) | sed 's/^.*samtools //; s/Using.*\$//' ))
+        orthoani: \$(echo \$(java -jar OAT_cmd.jar  2>&1) | grep "CALCULATOR" | sed "s/.*CALCULATOR //" | sed "s/\]//"))
     END_VERSIONS
     """
 
@@ -43,14 +45,12 @@ process ORTHOANI {
     def args = task.ext.args ?: ''
     
     """
-    echo "java -jar ${orthoani_jar} -blastplus_dir ${blastplus_dir} -fasta1 ${fasta1} -fasta2 ${fasta2} > ${fasta1}_${fasta2}.txt"
-
     touch ${fasta1}_${fasta2}.result.txt
-
+    touch ${fasta2}_${fasta1}.result.txt
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        orthoani: \$(echo \$(samtools --version 2>&1) | sed 's/^.*samtools //; s/Using.*\$//' ))
+        orthoani: \$(echo \$(java -jar OAT_cmd.jar  2>&1) | grep "CALCULATOR" | sed "s/.*CALCULATOR //" | sed "s/\]//"))
     END_VERSIONS
     """
 }
