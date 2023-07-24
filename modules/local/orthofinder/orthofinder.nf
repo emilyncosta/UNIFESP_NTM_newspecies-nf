@@ -1,4 +1,4 @@
-process ORTHOANI {
+process ORTHOFINDER {
     tag "$fasta1 - $fasta2"
     label 'process_medium'
 
@@ -49,7 +49,7 @@ process ORTHOANI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        orthoani: 1.40
+        orthoani: \$(echo \$(java -jar OAT_cmd.jar  2>&1) | grep "CALCULATOR" | sed "s/.*CALCULATOR //" | sed "s/\]//")
     END_VERSIONS
     """
 }

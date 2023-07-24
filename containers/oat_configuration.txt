@@ -1,0 +1,14 @@
+OAT Configuration File
+#Input Directory
+	name: /Users/abhi/projects/collaboration-unifesp-labmicobact-ntm-mterrae-nf/data/assemblies_final
+#Output Directory
+	name: /Users/abhi
+#Blast Directory
+	name: blast
+#Number of Threads
+	name: 1
+#Original ANI
+	bidirectional: true
+	mode: 1
+#GGDC
+	form: 1
