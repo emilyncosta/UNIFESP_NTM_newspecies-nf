@@ -89,7 +89,7 @@ workflow NTM_MTERRAE_NF {
 
     //NTM_MTERRAE_NF
     TRIMMOMATIC (
-        ch_input,
+        INPUT_CHECK.out.reads,
         params.adapter
     )
 
