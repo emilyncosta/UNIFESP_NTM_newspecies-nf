@@ -83,15 +83,12 @@ workflow NTM_MTERRAE_NF {
     )
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
-    CUSTOM_DUMPSOFTWAREVERSIONS (
-        ch_versions.unique().collectFile(name: 'collated_versions.yml')
-    )
-
     //NTM_MTERRAE_NF
     TRIMMOMATIC (
         INPUT_CHECK.out.reads,
         params.adapter
     )
+    ch_versions = ch_versions.mix(TRIMMOMATIC.out.versions.first())
 
     ch_in_spades = TRIMMOMATIC.out.trimmed_reads
                         .map { m,f -> [m,f,[],[]]}
@@ -103,6 +100,12 @@ workflow NTM_MTERRAE_NF {
         ch_in_spades,
         [],
         []
+    )
+
+    ch_versions = ch_versions.mix(SPADES.out.versions.first())
+
+    CUSTOM_DUMPSOFTWAREVERSIONS (
+        ch_versions.unique().collectFile(name: 'collated_versions.yml')
     )
 
 
