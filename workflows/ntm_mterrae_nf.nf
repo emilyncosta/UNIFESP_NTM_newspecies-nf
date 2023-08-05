@@ -83,7 +83,10 @@ workflow NTM_MTERRAE_NF {
     )
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
-    //NTM_MTERRAE_NF
+//==================================
+//NTM_MTERRAE_NF
+//==================================
+
     TRIMMOMATIC (
         INPUT_CHECK.out.reads,
         params.adapter
@@ -92,9 +95,7 @@ workflow NTM_MTERRAE_NF {
 
     ch_in_spades = TRIMMOMATIC.out.trimmed_reads
                         .map { m,f -> [m,f,[],[]]}
-                        .view()
                         //.debug(tag:'ch_in_spades')
-
 
     SPADES (
         ch_in_spades,
@@ -103,6 +104,17 @@ workflow NTM_MTERRAE_NF {
     )
 
     ch_versions = ch_versions.mix(SPADES.out.versions.first())
+
+//NOTE:  work in progress within nomad00 => /home/abhinav/projects/collaboration-unifesp-labmicobact-ntm-mterrae-nf/_scratch/results/ntm-mterrae-nf-29219/spades
+
+    UTILS_PREPARE_CONTIGS_LIST
+
+    FASTGREP
+
+    CHECKM_LINEAGEWF
+
+//==================================
+//==================================
 
     CUSTOM_DUMPSOFTWAREVERSIONS (
         ch_versions.unique().collectFile(name: 'collated_versions.yml')
