@@ -1,6 +1,6 @@
 process TRIMMOMATIC {
     tag "$meta.id"
-    label 'process_medium'
+    label 'process_high'
 
     conda "bioconda::trimmomatic=0.39"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
