@@ -99,13 +99,11 @@ workflow NTM_MTERRAE_NF {
                         //.debug(tag:'ch_in_spades')
 
 
-/*
     SPADES (
         ch_in_spades,
         [],
         []
     )
-*/
 
 
     //
