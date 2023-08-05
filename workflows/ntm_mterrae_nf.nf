@@ -95,7 +95,7 @@ workflow NTM_MTERRAE_NF {
 
     ch_in_spades = TRIMMOMATIC.out.trimmed_reads
                         .map { m,f -> [m,f,[],[]]}
-                        .debug(tag:'ch_in_spades')
+                        //.debug(tag:'ch_in_spades')
 
 
 /*
