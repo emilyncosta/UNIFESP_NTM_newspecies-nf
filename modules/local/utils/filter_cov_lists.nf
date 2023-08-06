@@ -2,17 +2,17 @@ process UTILS_FILTER_COV_LISTS {
     tag "$meta.id"
     label 'process_low'
 
-    conda "bioconda::spades=3.15.5"
+    conda "bioconda::multiqc=1.14"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/spades:3.15.5--h95f258a_1' :
-        'biocontainers/spades:3.15.5--h95f258a_1' }"
+        'https://depot.galaxyproject.org/singularity/multiqc:1.14--pyhdfd78af_0' :
+        'quay.io/biocontainers/multiqc:1.14--pyhdfd78af_0' }"
 
     input:
     tuple val(meta), path(contigsgz)
 
     output:
-    tuple val(meta), path('*.LCov.contigs.list'), path('*.HCov.contigs.list')      , optional:true, emit: contigs
-    path  "versions.yml"                                                           , emit: versions
+    tuple val(meta), path("*.contigs.fa"), path('*.LCov.contigs.list'), path('*.HCov.contigs.list')      , optional:true, emit: contigs_lists
+    path  "versions.yml"                                                                                 , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
