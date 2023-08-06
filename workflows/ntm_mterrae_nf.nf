@@ -103,7 +103,7 @@ workflow NTM_MTERRAE_NF {
         []
     )
 
-    ch_versions = ch_versions.mix(SPADES.out.versions.first())
+//    ch_versions = ch_versions.mix(SPADES.out.versions.first())
 
 //NOTE:  work in progress within nomad00 => /home/abhinav/projects/collaboration-unifesp-labmicobact-ntm-mterrae-nf/_scratch/results/ntm-mterrae-nf-29219/spades
 
