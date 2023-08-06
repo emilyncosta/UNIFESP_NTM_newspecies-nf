@@ -48,6 +48,7 @@ include { INPUT_CHECK } from '../subworkflows/local/input_check'
 //
 // MODULE: Installed directly from nf-core/modules
 //
+include { CHECKM_LINEAGEWF            } from '../modules/nf-core/checkm/lineagewf/main'
 include { TRIMMOMATIC                 } from '../modules/nf-core/trimmomatic/main'
 include { SPADES                      } from '../modules/nf-core/spades/main'
 include { FASTQC                      } from '../modules/nf-core/fastqc/main'
@@ -56,6 +57,7 @@ include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoft
 
 include { UTILS_FILTER_COV_LISTS      } from '../modules/local/utils/filter_cov_lists.nf'
 include { UTILS_FASTGREP              } from '../modules/local/utils/fastgrep.nf'
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,8 +115,7 @@ workflow NTM_MTERRAE_NF {
 
     UTILS_FASTGREP ( UTILS_FILTER_COV_LISTS.out.contigs_lists )
 
-//NOTE:  work in progress within nomad00 => /home/abhinav/projects/collaboration-unifesp-labmicobact-ntm-mterrae-nf/_scratch/results/ntm-mterrae-nf-29219/spades
-//    CHECKM_LINEAGEWF
+    CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
 
 //==================================
 //==================================

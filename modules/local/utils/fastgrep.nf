@@ -11,8 +11,8 @@ process UTILS_FASTGREP {
     tuple val(meta), path(contig), path(lcov_contigs), path(hcov_contigs)
 
     output:
-//    tuple val(meta), path('*.LCov.contigs.list'), path('*.HCov.contigs.list')      , optional:true, emit: contigs_lists
-    path  "versions.yml"                                                           , emit: versions
+    tuple val(meta), path('*.fasta')      , optional:true, emit: hcov_fasta
+    path  "versions.yml"                  , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -21,7 +21,7 @@ process UTILS_FASTGREP {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    fastgrep.pl -f ${hcov_contigs} ${contig} > ${prefix}.fna
+    fastgrep.pl -f ${hcov_contigs} ${contig} > ${prefix}.fasta
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
