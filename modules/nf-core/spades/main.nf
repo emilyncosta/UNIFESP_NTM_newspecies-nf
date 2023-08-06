@@ -11,21 +11,25 @@ process SPADES {
     tuple val(meta), path(illumina), path(pacbio), path(nanopore)
     path yml
     path hmm
-
+/*
     output:
-    tuple val(meta), path('*.scaffolds.fa.gz')    , optional:true, emit: scaffolds
-    tuple val(meta), path('*.contigs.fa.gz')      , optional:true, emit: contigs
-    tuple val(meta), path('*.transcripts.fa.gz')  , optional:true, emit: transcripts
-    tuple val(meta), path('*.gene_clusters.fa.gz'), optional:true, emit: gene_clusters
-    tuple val(meta), path('*.assembly.gfa.gz')    , optional:true, emit: gfa
-    tuple val(meta), path('*.log')                , emit: log
-    path  "versions.yml"                          , emit: versions
-
+    tuple val(meta), path('*.scaffolds.fa.gz')                                     , optional:true, emit: scaffolds
+    tuple val(meta), path('*.contigs.fa.gz')                                       , optional:true, emit: contigs
+    tuple val(meta), path('*.LCov.contigs.list'), path('*.HCov.contigs.list')      , optional:true, emit: contigs_lists
+    tuple val(meta), path('*.transcripts.fa.gz')                                   , optional:true, emit: transcripts
+    tuple val(meta), path('*.gene_clusters.fa.gz')                                 , optional:true, emit: gene_clusters
+    tuple val(meta), path('*.assembly.gfa.gz')                                     , optional:true, emit: gfa
+    tuple val(meta), path('*.log')                                                 , emit: log
+    path  "versions.yml"                                                           , emit: versions
+*/
     when:
     task.ext.when == null || task.ext.when
 
     script:
     def args = task.ext.args ?: ''
+//FIXME: Implement optionally these metrics
+    def args_lcov = task.ext.args_lcov ?: ''
+    def args_hcov = task.ext.args_hcov ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def maxmem = task.memory.toGiga()
     def illumina_reads = illumina ? ( meta.single_end ? "-s $illumina" : "-1 ${illumina[0]} -2 ${illumina[1]}" ) : ""
@@ -33,6 +37,8 @@ process SPADES {
     def nanopore_reads = nanopore ? "--nanopore $nanopore" : ""
     def custom_hmms = hmm ? "--custom-hmms $hmm" : ""
     def reads = yml ? "--dataset $yml" : "$illumina_reads $pacbio_reads $nanopore_reads"
+
+    /*
     """
     spades.py \\
         $args \\
@@ -43,13 +49,19 @@ process SPADES {
         -o ./
     mv spades.log ${prefix}.spades.log
 
+    if [ -f contigs.fasta ]; then
+        mv contigs.fasta ${prefix}.contigs.fa
+        gzip -k -n ${prefix}.contigs.fa
+    fi
+
+
+    grep -F ">" ${prefix}.contigs.fa | sed -e 's/_/ /g' | sort -nrk 6 | awk '\$6<2.0 || \$4<500 {print \$0}'  | sed -e 's/ /_/g'| sed -e 's/>//g' > ${prefix}.LCov.contigs.list
+    grep -F ">" ${prefix}.contigs.fa |  sed -e 's/_/ /g' | sort -nrk 6 | awk '\$6>=2.0 && \$4>=500 {print \$0}' | sed -e 's/ /_/g'| sed -e 's/>//g' > ${prefix}.HCov.contigs.list
+
+
     if [ -f scaffolds.fasta ]; then
         mv scaffolds.fasta ${prefix}.scaffolds.fa
         gzip -n ${prefix}.scaffolds.fa
-    fi
-    if [ -f contigs.fasta ]; then
-        mv contigs.fasta ${prefix}.contigs.fa
-        gzip -n ${prefix}.contigs.fa
     fi
     if [ -f transcripts.fasta ]; then
         mv transcripts.fasta ${prefix}.transcripts.fa
@@ -69,5 +81,10 @@ process SPADES {
     "${task.process}":
         spades: \$(spades.py --version 2>&1 | sed 's/^.*SPAdes genome assembler v//; s/ .*\$//')
     END_VERSIONS
+    """
+    */
+
+    """
+    echo ${task.args_lcov}
     """
 }

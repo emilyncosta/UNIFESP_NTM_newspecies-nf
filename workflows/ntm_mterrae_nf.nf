@@ -107,11 +107,9 @@ workflow NTM_MTERRAE_NF {
 
 //NOTE:  work in progress within nomad00 => /home/abhinav/projects/collaboration-unifesp-labmicobact-ntm-mterrae-nf/_scratch/results/ntm-mterrae-nf-29219/spades
 
-    UTILS_PREPARE_CONTIGS_LIST
-
-    FASTGREP
-
-    CHECKM_LINEAGEWF
+//    UTILS_PREPARE_CONTIGS_LIST
+//    FASTGREP
+//    CHECKM_LINEAGEWF
 
 //==================================
 //==================================
