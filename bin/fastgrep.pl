@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 #NOTE: Obtained from https://github.com/rec3141/rec-genome-tools/blob/c6587ae8ef07e323dc351994367bfbb738fb2f81/bin/fastagrep.pl
 
