@@ -112,10 +112,13 @@ workflow NTM_MTERRAE_NF {
 
 
     UTILS_FILTER_COV_LISTS ( SPADES.out.contigs )
+    ch_versions = ch_versions.mix(UTILS_FILTER_COV_LISTS.out.versions.first())
 
     UTILS_FASTGREP ( UTILS_FILTER_COV_LISTS.out.contigs_lists )
+    ch_versions = ch_versions.mix(UTILS_FASTGREP.out.versions.first())
 
     CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
+    ch_versions = ch_versions.mix(CHECKM_LINEAGEWF.out.versions.first())
 
 //==================================
 //==================================
