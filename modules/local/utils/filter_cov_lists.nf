@@ -11,8 +11,8 @@ process UTILS_FILTER_COV_LISTS {
     tuple val(meta), path(contigsgz)
 
     output:
-//    tuple val(meta), path('*.contigs.fa.gz')      , optional:true, emit: contigs
-    path  "versions.yml"                          , emit: versions
+    tuple val(meta), path('*.LCov.contigs.list'), path('*.HCov.contigs.list')      , optional:true, emit: contigs
+    path  "versions.yml"                                                           , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
