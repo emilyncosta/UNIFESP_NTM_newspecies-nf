@@ -55,6 +55,7 @@ include { MULTIQC                     } from '../modules/nf-core/multiqc/main'
 include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoftwareversions/main'
 
 include { UTILS_FILTER_COV_LISTS      } from '../modules/local/utils/filter_cov_lists.nf'
+include { UTILS_FASTGREP              } from '../modules/local/utils/fastgrep.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +111,7 @@ workflow NTM_MTERRAE_NF {
 
     UTILS_FILTER_COV_LISTS ( SPADES.out.contigs )
 
-    FASTGREP ( UTILS_FILTER_COV_LISTS.out.contigs_lists )
+    UTILS_FASTGREP ( UTILS_FILTER_COV_LISTS.out.contigs_lists )
 
 //NOTE:  work in progress within nomad00 => /home/abhinav/projects/collaboration-unifesp-labmicobact-ntm-mterrae-nf/_scratch/results/ntm-mterrae-nf-29219/spades
 //    CHECKM_LINEAGEWF

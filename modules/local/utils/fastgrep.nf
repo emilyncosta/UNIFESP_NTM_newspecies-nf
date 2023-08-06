@@ -1,4 +1,4 @@
-process FASTGREP {
+process UTILS_FASTGREP {
     tag "$meta.id"
     label 'process_low'
 
