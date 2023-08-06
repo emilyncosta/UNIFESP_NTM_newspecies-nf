@@ -85,6 +85,6 @@ process SPADES {
     */
 
     """
-    echo ${task.args_lcov}
+    echo ${task.ext.args_lcov}
     """
 }
