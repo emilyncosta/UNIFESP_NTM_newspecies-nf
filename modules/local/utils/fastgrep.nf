@@ -21,7 +21,7 @@ process UTILS_FASTGREP {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    fastagrep.pl -f ${hcov_contigs} ${contig} > ${prefix}.fna
+    fastgrep.pl -f ${hcov_contigs} ${contig} > ${prefix}.fna
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
