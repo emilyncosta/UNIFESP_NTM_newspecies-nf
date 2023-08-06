@@ -2,10 +2,10 @@ process UTILS_FASTGREP {
     tag "$meta.id"
     label 'process_low'
 
-    conda "bioconda::multiqc=1.14"
+    conda "bioconda::perl-bioperl=1.7.8"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/multiqc:1.14--pyhdfd78af_0' :
-        'quay.io/biocontainers/multiqc:1.14--pyhdfd78af_0' }"
+        'https://depot.galaxyproject.org/singularity/perl-bioperl:1.7.8--hdfd78af_1' :
+        'biocontainers/perl-bioperl:1.7.8--hdfd78af_1' }"
 
     input:
     tuple val(meta), path(contig), path(lcov_contigs), path(hcov_contigs)
