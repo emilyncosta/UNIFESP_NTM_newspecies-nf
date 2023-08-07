@@ -21,7 +21,7 @@ process ORTHOFINDER {
     def args = task.ext.args ?: ''
     
     """
-    orthofinder -d -f fastas
+    orthofinder ${args} -f fastas
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
