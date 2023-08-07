@@ -25,7 +25,7 @@ process ORTHOFINDER {
 
     mv fastas/OrthoFinder/Results* .
 
-    rm Results*/WorkingDirectory
+    rm -rf Results*/WorkingDirectory
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

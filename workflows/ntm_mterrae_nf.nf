@@ -142,8 +142,9 @@ if (params.generate_assemblies_wf) {
     UTILS_FASTGREP ( UTILS_FILTER_COV_LISTS.out.contigs_lists )
     ch_versions = ch_versions.mix(UTILS_FASTGREP.out.versions.first())
 
-    CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
-    ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
+//NOTE: Maybe just better to rely upon nf-core/mag for this?
+//    CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
+//    ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
 
     ch_in_raxmlng = UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } 
     RAXMLNG_NO_BOOTSTRAP ( ch_in_raxmlng )
