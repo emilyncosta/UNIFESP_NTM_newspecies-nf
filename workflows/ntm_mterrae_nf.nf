@@ -60,6 +60,7 @@ include { UTILS_FILTER_COV_LISTS            } from '../modules/local/utils/filte
 include { UTILS_FASTGREP                    } from '../modules/local/utils/fastgrep.nf'
 
 include { ORTHOANI                          } from '../modules/local/orthoani/orthoani.nf'
+include { ORTHOFINDER                       } from '../modules/local/orthofinder/orthofinder.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,9 +79,11 @@ if (params.compute_similarity_wf) {
 
     fasta_ch = Channel.fromPath("${params.orthoani_fastas}")
 
-    orthoani_ch = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
+    ORTHOFINDER ( fasta_ch.collect() )
 
-    ORTHOANI(params.orthoani_jar, orthoani_ch)
+    ch_in_orthoani = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
+
+    ORTHOANI (params.orthoani_jar, ch_in_orthoani)
 
     //UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
 
@@ -92,6 +95,7 @@ if (params.compute_similarity_wf) {
 }
 
 if (params.generate_assemblies_wf) {
+
     ch_versions = Channel.empty()
 
     //
@@ -142,17 +146,10 @@ if (params.generate_assemblies_wf) {
     CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
     ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
 
-
     ch_in_raxmlng = UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } 
-
     RAXMLNG_NO_BOOTSTRAP ( ch_in_raxmlng )
-
     RAXMLNG_BOOTSTRAP ( ch_in_raxmlng )
     
-
-//FIXME
-//ORTHOFINDER
-
 
 //==================================
 //==================================
