@@ -8,633 +8,267 @@ About: >
 ---
 - name: targetGenome
   parts:
-  - name: NODE_1_length_572298_cov_65.873875
-    base-pairs: 572298
-    percent-GC: 66.90063568280861
-  - name: NODE_2_length_332893_cov_61.971502
-    base-pairs: 332893
-    percent-GC: 67.7671203660035
-  - name: NODE_3_length_306041_cov_61.055110
-    base-pairs: 306041
-    percent-GC: 68.0114755866044
-  - name: NODE_4_length_223768_cov_61.055500
-    base-pairs: 223768
-    percent-GC: 68.11161560187337
-  - name: NODE_5_length_218506_cov_61.756401
-    base-pairs: 218506
-    percent-GC: 67.71347239892727
-  - name: NODE_6_length_209871_cov_61.590158
-    base-pairs: 209871
-    percent-GC: 67.9803307746187
-  - name: NODE_7_length_206300_cov_32.928070
-    base-pairs: 206300
-    percent-GC: 65.7120698012603
-  - name: NODE_8_length_200434_cov_65.151093
-    base-pairs: 200434
-    percent-GC: 67.37878802997496
-  - name: NODE_9_length_199194_cov_60.996835
-    base-pairs: 199194
-    percent-GC: 68.68530176611745
-  - name: NODE_10_length_175598_cov_59.969790
-    base-pairs: 175598
-    percent-GC: 68.2991833619973
-  - name: NODE_11_length_161220_cov_58.840828
-    base-pairs: 161220
-    percent-GC: 68.62051854608609
-  - name: NODE_12_length_159838_cov_60.369881
-    base-pairs: 159838
-    percent-GC: 68.4593150564947
-  - name: NODE_13_length_132243_cov_63.923666
-    base-pairs: 132243
-    percent-GC: 67.58316130154337
-  - name: NODE_14_length_123258_cov_64.556440
-    base-pairs: 123258
-    percent-GC: 66.64962923299096
-  - name: NODE_15_length_119904_cov_61.226713
-    base-pairs: 119904
-    percent-GC: 67.82425940752601
-  - name: NODE_16_length_118459_cov_56.026502
-    base-pairs: 118459
-    percent-GC: 69.00868654977671
-  - name: NODE_17_length_115305_cov_61.419412
-    base-pairs: 115305
-    percent-GC: 68.2823815099085
-  - name: NODE_18_length_105333_cov_40.737724
-    base-pairs: 105333
-    percent-GC: 65.37647271035668
-  - name: NODE_19_length_104166_cov_49.105326
-    base-pairs: 104166
-    percent-GC: 70.22348943033235
-  - name: NODE_20_length_103173_cov_12.914397
-    base-pairs: 103173
-    percent-GC: 64.59441908251189
-  - name: NODE_21_length_102660_cov_61.601611
-    base-pairs: 102660
-    percent-GC: 68.16481589713618
-  - name: NODE_22_length_102613_cov_12.289923
-    base-pairs: 102613
-    percent-GC: 65.3435724518336
-  - name: NODE_23_length_99441_cov_59.658447
-    base-pairs: 99441
-    percent-GC: 67.69441176174817
-  - name: NODE_24_length_90216_cov_61.044678
-    base-pairs: 90216
-    percent-GC: 68.3138245987408
-  - name: NODE_25_length_84608_cov_67.806619
-    base-pairs: 84608
-    percent-GC: 65.07540658093798
-  - name: NODE_26_length_75791_cov_52.925724
-    base-pairs: 75791
-    percent-GC: 69.57686268818198
-  - name: NODE_27_length_65598_cov_63.672160
-    base-pairs: 65598
-    percent-GC: 67.0432025366627
-  - name: NODE_28_length_63524_cov_59.931669
-    base-pairs: 63524
-    percent-GC: 68.64492160443297
-  - name: NODE_29_length_63255_cov_59.155430
-    base-pairs: 63255
-    percent-GC: 68.75029641925539
-  - name: NODE_30_length_62137_cov_62.622851
-    base-pairs: 62137
-    percent-GC: 67.77765260633761
-  - name: NODE_31_length_55496_cov_65.393957
-    base-pairs: 55496
-    percent-GC: 67.17781461726972
-  - name: NODE_32_length_54285_cov_54.595609
-    base-pairs: 54285
-    percent-GC: 69.744865064014
-  - name: NODE_33_length_48636_cov_53.680905
-    base-pairs: 48636
-    percent-GC: 69.5040710584752
-  - name: NODE_34_length_47414_cov_62.935437
-    base-pairs: 47414
-    percent-GC: 68.28995655291686
-  - name: NODE_35_length_47225_cov_59.391779
-    base-pairs: 47225
-    percent-GC: 68.33033350979355
-  - name: NODE_36_length_46764_cov_58.653172
-    base-pairs: 46764
-    percent-GC: 69.27978787101189
-  - name: NODE_37_length_46089_cov_60.334080
-    base-pairs: 46089
-    percent-GC: 68.3460261667643
-  - name: NODE_38_length_43856_cov_57.733998
-    base-pairs: 43856
-    percent-GC: 68.8776906238599
-  - name: NODE_39_length_37503_cov_56.466877
-    base-pairs: 37503
-    percent-GC: 69.83974615364104
-  - name: NODE_40_length_35870_cov_64.555493
-    base-pairs: 35870
-    percent-GC: 67.18706439921941
-  - name: NODE_41_length_33970_cov_65.295039
-    base-pairs: 33970
-    percent-GC: 67.99823373564911
-  - name: NODE_42_length_32827_cov_56.921743
-    base-pairs: 32827
-    percent-GC: 69.37277241295276
-  - name: NODE_43_length_32458_cov_65.452414
-    base-pairs: 32458
-    percent-GC: 67.12674841333416
-  - name: NODE_44_length_29384_cov_48.556995
-    base-pairs: 29384
-    percent-GC: 69.68077865505036
-  - name: NODE_45_length_29355_cov_66.204119
-    base-pairs: 29355
-    percent-GC: 66.68029296542326
-  - name: NODE_46_length_27981_cov_57.407123
-    base-pairs: 27981
-    percent-GC: 69.44712483470927
-  - name: NODE_47_length_25913_cov_13.199953
-    base-pairs: 25913
-    percent-GC: 66.132829081928
-  - name: NODE_48_length_22321_cov_64.099126
-    base-pairs: 22321
-    percent-GC: 67.30881232919673
-  - name: NODE_49_length_19499_cov_55.234359
-    base-pairs: 19499
-    percent-GC: 69.67536796758809
-  - name: NODE_50_length_15429_cov_66.372827
-    base-pairs: 15429
-    percent-GC: 66.79629269557327
-  - name: NODE_51_length_13665_cov_60.336756
-    base-pairs: 13665
-    percent-GC: 69.35967800951336
-  - name: NODE_52_length_13536_cov_11.715042
-    base-pairs: 13536
-    percent-GC: 63.7854609929078
-  - name: NODE_53_length_12414_cov_55.760804
-    base-pairs: 12414
-    percent-GC: 67.73803769937167
-  - name: NODE_54_length_12322_cov_12.295941
-    base-pairs: 12322
-    percent-GC: 64.51063139100795
-  - name: NODE_55_length_11391_cov_104.995295
-    base-pairs: 11391
-    percent-GC: 63.97155649196734
-  - name: NODE_56_length_10103_cov_12.680333
-    base-pairs: 10103
-    percent-GC: 63.85232109274473
-  - name: NODE_57_length_8877_cov_59.682629
-    base-pairs: 8877
-    percent-GC: 68.85208966993353
-  - name: NODE_58_length_6627_cov_12.690615
-    base-pairs: 6627
-    percent-GC: 63.693979176097784
-  - name: NODE_59_length_5513_cov_178.097661
+  - name: NODE_1_length_341445_cov_67.537276
+    base-pairs: 341445
+    percent-GC: 68.24085870345151
+  - name: NODE_2_length_287900_cov_67.062685
+    base-pairs: 287900
+    percent-GC: 68.32615491490101
+  - name: NODE_3_length_271271_cov_66.720053
+    base-pairs: 271271
+    percent-GC: 68.3242956305687
+  - name: NODE_4_length_234469_cov_65.011231
+    base-pairs: 234469
+    percent-GC: 67.37308556781494
+  - name: NODE_5_length_219483_cov_65.136419
+    base-pairs: 219483
+    percent-GC: 68.65725363695594
+  - name: NODE_6_length_196047_cov_61.823448
+    base-pairs: 196047
+    percent-GC: 66.92986885797794
+  - name: NODE_7_length_194849_cov_64.143661
+    base-pairs: 194849
+    percent-GC: 68.63417312893574
+  - name: NODE_8_length_193980_cov_68.508690
+    base-pairs: 193980
+    percent-GC: 67.2074440663986
+  - name: NODE_9_length_177727_cov_67.103654
+    base-pairs: 177727
+    percent-GC: 68.52926117022174
+  - name: NODE_10_length_155558_cov_68.987724
+    base-pairs: 155558
+    percent-GC: 67.5915092762828
+  - name: NODE_11_length_147492_cov_67.308676
+    base-pairs: 147492
+    percent-GC: 67.88029181243728
+  - name: NODE_12_length_133625_cov_63.859024
+    base-pairs: 133625
+    percent-GC: 69.31936389148737
+  - name: NODE_13_length_131354_cov_66.227651
+    base-pairs: 131354
+    percent-GC: 66.9107906877598
+  - name: NODE_14_length_127827_cov_66.143594
+    base-pairs: 127827
+    percent-GC: 68.28760746947046
+  - name: NODE_15_length_121158_cov_67.161008
+    base-pairs: 121158
+    percent-GC: 68.22166097162383
+  - name: NODE_16_length_113230_cov_65.955996
+    base-pairs: 113230
+    percent-GC: 68.33877947540404
+  - name: NODE_17_length_111964_cov_64.807953
+    base-pairs: 111964
+    percent-GC: 67.54760458718874
+  - name: NODE_18_length_108247_cov_64.217046
+    base-pairs: 108247
+    percent-GC: 68.31782866961672
+  - name: NODE_19_length_83170_cov_66.143793
+    base-pairs: 83170
+    percent-GC: 68.3179030900565
+  - name: NODE_20_length_83126_cov_65.570501
+    base-pairs: 83126
+    percent-GC: 68.3552679065515
+  - name: NODE_21_length_75274_cov_69.126193
+    base-pairs: 75274
+    percent-GC: 67.66878337805882
+  - name: NODE_22_length_73002_cov_66.909448
+    base-pairs: 73002
+    percent-GC: 67.15569436453796
+  - name: NODE_23_length_72765_cov_67.720986
+    base-pairs: 72765
+    percent-GC: 67.67676767676768
+  - name: NODE_24_length_60286_cov_66.023288
+    base-pairs: 60286
+    percent-GC: 68.50346680821418
+  - name: NODE_25_length_58414_cov_63.096660
+    base-pairs: 58414
+    percent-GC: 67.94946416954839
+  - name: NODE_26_length_57006_cov_62.393783
+    base-pairs: 57006
+    percent-GC: 68.34368312107497
+  - name: NODE_27_length_55724_cov_68.047125
+    base-pairs: 55724
+    percent-GC: 66.99626731749336
+  - name: NODE_28_length_53338_cov_63.894928
+    base-pairs: 53338
+    percent-GC: 66.6860399715025
+  - name: NODE_29_length_49051_cov_63.000736
+    base-pairs: 49051
+    percent-GC: 69.12193431326578
+  - name: NODE_30_length_42858_cov_69.750486
+    base-pairs: 42858
+    percent-GC: 68.58229502076625
+  - name: NODE_31_length_41606_cov_69.250127
+    base-pairs: 41606
+    percent-GC: 67.92529923568716
+  - name: NODE_32_length_38801_cov_64.871464
+    base-pairs: 38801
+    percent-GC: 68.41833973351203
+  - name: NODE_33_length_36033_cov_58.681474
+    base-pairs: 36033
+    percent-GC: 70.01637387949935
+  - name: NODE_34_length_34575_cov_68.989724
+    base-pairs: 34575
+    percent-GC: 67.22198120028922
+  - name: NODE_35_length_34121_cov_154.971495
+    base-pairs: 34121
+    percent-GC: 67.47457577444975
+  - name: NODE_36_length_33749_cov_65.155791
+    base-pairs: 33749
+    percent-GC: 68.5649945183561
+  - name: NODE_37_length_32310_cov_63.646180
+    base-pairs: 32310
+    percent-GC: 67.82420303311669
+  - name: NODE_38_length_31331_cov_62.851461
+    base-pairs: 31331
+    percent-GC: 67.6773802304427
+  - name: NODE_39_length_30863_cov_65.112637
+    base-pairs: 30863
+    percent-GC: 69.21556556394388
+  - name: NODE_40_length_27530_cov_61.984053
+    base-pairs: 27530
+    percent-GC: 65.52488194696694
+  - name: NODE_41_length_26783_cov_69.935137
+    base-pairs: 26783
+    percent-GC: 65.99335399320465
+  - name: NODE_42_length_24119_cov_64.854993
+    base-pairs: 24119
+    percent-GC: 70.60408806335255
+  - name: NODE_43_length_23386_cov_65.239606
+    base-pairs: 23386
+    percent-GC: 66.00957838022748
+  - name: NODE_44_length_17796_cov_59.698398
+    base-pairs: 17796
+    percent-GC: 65.91368846931894
+  - name: NODE_45_length_15136_cov_63.047105
+    base-pairs: 15136
+    percent-GC: 69.01427061310783
+  - name: NODE_46_length_12112_cov_127.674009
+    base-pairs: 12112
+    percent-GC: 67.26387054161162
+  - name: NODE_47_length_12040_cov_64.020398
+    base-pairs: 12040
+    percent-GC: 66.17109634551495
+  - name: NODE_48_length_10593_cov_119.564017
+    base-pairs: 10593
+    percent-GC: 70.18785990748607
+  - name: NODE_49_length_10307_cov_71.538900
+    base-pairs: 10307
+    percent-GC: 65.69321820122246
+  - name: NODE_50_length_10149_cov_50.431052
+    base-pairs: 10149
+    percent-GC: 68.40082766775052
+  - name: NODE_51_length_8967_cov_79.709276
+    base-pairs: 8967
+    percent-GC: 64.101706256273
+  - name: NODE_52_length_7442_cov_136.179631
+    base-pairs: 7442
+    percent-GC: 62.20102123085192
+  - name: NODE_53_length_6630_cov_63.986314
+    base-pairs: 6630
+    percent-GC: 68.7028657616893
+  - name: NODE_54_length_6243_cov_127.832407
+    base-pairs: 6243
+    percent-GC: 62.69421752362646
+  - name: NODE_55_length_5597_cov_69.373675
+    base-pairs: 5597
+    percent-GC: 61.76523137395033
+  - name: NODE_56_length_5513_cov_239.347196
     base-pairs: 5513
-    percent-GC: 44.78505350988573
-  - name: NODE_61_length_5328_cov_5.420688
-    base-pairs: 5328
-    percent-GC: 71.90315315315316
-  - name: NODE_62_length_4808_cov_150.969878
-    base-pairs: 4808
-    percent-GC: 56.260399334442596
-  - name: NODE_63_length_4106_cov_30.409902
-    base-pairs: 4106
-    percent-GC: 65.48952752070142
-  - name: NODE_64_length_3847_cov_45.719892
-    base-pairs: 3847
-    percent-GC: 71.64023914738758
-  - name: NODE_65_length_3228_cov_20.313770
-    base-pairs: 3228
-    percent-GC: 68.37050805452293
-  - name: NODE_67_length_2942_cov_10.769094
-    base-pairs: 2942
-    percent-GC: 64.98980285520054
-  - name: NODE_69_length_2732_cov_14.098656
-    base-pairs: 2732
-    percent-GC: 53.18448023426061
-  - name: NODE_70_length_2714_cov_17.708156
+    percent-GC: 44.65808089969164
+  - name: NODE_57_length_5464_cov_94.940041
+    base-pairs: 5464
+    percent-GC: 56.25915080527086
+  - name: NODE_58_length_5116_cov_61.541792
+    base-pairs: 5116
+    percent-GC: 70.44566067240031
+  - name: NODE_59_length_4770_cov_71.058152
+    base-pairs: 4770
+    percent-GC: 61.299790356394126
+  - name: NODE_60_length_4476_cov_264.680846
+    base-pairs: 4476
+    percent-GC: 68.0071492403932
+  - name: NODE_61_length_4139_cov_68.519442
+    base-pairs: 4139
+    percent-GC: 64.14592896834985
+  - name: NODE_62_length_3880_cov_76.163602
+    base-pairs: 3880
+    percent-GC: 64.81958762886597
+  - name: NODE_63_length_3354_cov_101.656957
+    base-pairs: 3354
+    percent-GC: 69.5587358378056
+  - name: NODE_64_length_2714_cov_19.854658
     base-pairs: 2714
-    percent-GC: 73.13927781871776
-  - name: NODE_72_length_2486_cov_9.052141
-    base-pairs: 2486
-    percent-GC: 77.63475462590507
-  - name: NODE_74_length_2456_cov_4.993559
-    base-pairs: 2456
-    percent-GC: 71.94625407166124
-  - name: NODE_100_length_1864_cov_2.871618
-    base-pairs: 1864
-    percent-GC: 64.8068669527897
-  - name: NODE_108_length_1775_cov_13.159587
-    base-pairs: 1775
-    percent-GC: 74.59154929577464
-  - name: NODE_115_length_1736_cov_2.055314
-    base-pairs: 1736
-    percent-GC: 65.78341013824885
-  - name: NODE_119_length_1711_cov_2.399621
-    base-pairs: 1711
-    percent-GC: 64.58211572180012
-  - name: NODE_150_length_1588_cov_2.068446
+    percent-GC: 53.242446573323505
+  - name: NODE_65_length_2352_cov_134.443146
+    base-pairs: 2352
+    percent-GC: 61.224489795918366
+  - name: NODE_66_length_1903_cov_59.555743
+    base-pairs: 1903
+    percent-GC: 64.16184971098266
+  - name: NODE_67_length_1892_cov_56.065722
+    base-pairs: 1892
+    percent-GC: 70.77167019027485
+  - name: NODE_68_length_1834_cov_119.497364
+    base-pairs: 1834
+    percent-GC: 69.08396946564885
+  - name: NODE_69_length_1697_cov_176.917834
+    base-pairs: 1697
+    percent-GC: 66.88273423688862
+  - name: NODE_70_length_1588_cov_73.043806
     base-pairs: 1588
-    percent-GC: 63.22418136020151
-  - name: NODE_169_length_1507_cov_2.177536
-    base-pairs: 1507
-    percent-GC: 66.55607166556072
-  - name: NODE_174_length_1491_cov_2.211144
-    base-pairs: 1491
-    percent-GC: 65.12407780013413
-  - name: NODE_177_length_1479_cov_2.079142
-    base-pairs: 1479
-    percent-GC: 64.50304259634889
-  - name: NODE_207_length_1407_cov_215.272656
-    base-pairs: 1407
-    percent-GC: 66.66666666666667
-  - name: NODE_210_length_1400_cov_2.129615
-    base-pairs: 1400
-    percent-GC: 67.57142857142857
-  - name: NODE_222_length_1385_cov_2.050079
-    base-pairs: 1385
-    percent-GC: 64.83754512635379
-  - name: NODE_225_length_1379_cov_41.702077
-    base-pairs: 1379
-    percent-GC: 71.9361856417694
-  - name: NODE_316_length_1217_cov_33.211927
-    base-pairs: 1217
-    percent-GC: 69.51520131470829
-  - name: NODE_345_length_1172_cov_15.984689
-    base-pairs: 1172
-    percent-GC: 50.68259385665529
-  - name: NODE_348_length_1163_cov_19.728764
-    base-pairs: 1163
-    percent-GC: 68.09974204643164
-  - name: NODE_376_length_1130_cov_2.280160
-    base-pairs: 1130
-    percent-GC: 66.90265486725664
-  - name: NODE_442_length_1032_cov_2.077348
-    base-pairs: 1032
-    percent-GC: 69.76744186046511
-  - name: NODE_469_length_1013_cov_2.216704
-    base-pairs: 1013
-    percent-GC: 65.64659427443237
-  - name: NODE_473_length_1009_cov_72.420635
-    base-pairs: 1009
-    percent-GC: 65.51040634291378
-  - name: NODE_474_length_1009_cov_2.089569
-    base-pairs: 1009
-    percent-GC: 64.22200198216055
-  - name: NODE_486_length_994_cov_255.179931
-    base-pairs: 994
-    percent-GC: 64.38631790744466
-  - name: NODE_522_length_957_cov_2.007229
-    base-pairs: 957
-    percent-GC: 67.29362591431557
-  - name: NODE_531_length_952_cov_2.619394
-    base-pairs: 952
-    percent-GC: 66.7016806722689
-  - name: NODE_532_length_952_cov_2.185455
-    base-pairs: 952
-    percent-GC: 73.94957983193277
-  - name: NODE_545_length_944_cov_2.115055
-    base-pairs: 944
-    percent-GC: 64.72457627118644
-  - name: NODE_550_length_942_cov_2.071166
+    percent-GC: 64.29471032745592
+  - name: NODE_71_length_1484_cov_380.945468
+    base-pairs: 1484
+    percent-GC: 65.97035040431267
+  - name: NODE_72_length_1478_cov_75.116950
+    base-pairs: 1478
+    percent-GC: 58.32205683355886
+  - name: NODE_73_length_1463_cov_126.867515
+    base-pairs: 1463
+    percent-GC: 65.7552973342447
+  - name: NODE_74_length_1440_cov_12.501142
+    base-pairs: 1440
+    percent-GC: 79.16666666666667
+  - name: NODE_75_length_1183_cov_23.662879
+    base-pairs: 1183
+    percent-GC: 50.54945054945055
+  - name: NODE_76_length_1127_cov_2.062000
+    base-pairs: 1127
+    percent-GC: 40.63886424134871
+  - name: NODE_77_length_982_cov_121.012865
+    base-pairs: 982
+    percent-GC: 70.57026476578412
+  - name: NODE_78_length_942_cov_59.255215
     base-pairs: 942
-    percent-GC: 64.96815286624204
-  - name: NODE_577_length_925_cov_2.611529
-    base-pairs: 925
-    percent-GC: 68.97297297297297
-  - name: NODE_589_length_917_cov_119.891139
-    base-pairs: 917
-    percent-GC: 61.723009814612865
-  - name: NODE_601_length_907_cov_2.007692
-    base-pairs: 907
-    percent-GC: 68.24696802646086
-  - name: NODE_607_length_903_cov_2.110825
-    base-pairs: 903
-    percent-GC: 67.77408637873754
-  - name: NODE_646_length_883_cov_2.216931
-    base-pairs: 883
-    percent-GC: 65.34541336353341
-  - name: NODE_657_length_875_cov_2.172460
-    base-pairs: 875
-    percent-GC: 64.91428571428571
-  - name: NODE_658_length_875_cov_2.128342
-    base-pairs: 875
-    percent-GC: 64.91428571428571
-  - name: NODE_679_length_863_cov_2.023098
-    base-pairs: 863
-    percent-GC: 66.85979142526072
-  - name: NODE_685_length_857_cov_154.416438
-    base-pairs: 857
-    percent-GC: 58.459743290548424
-  - name: NODE_691_length_855_cov_2.436813
-    base-pairs: 855
-    percent-GC: 67.25146198830409
-  - name: NODE_705_length_848_cov_3.199723
-    base-pairs: 848
-    percent-GC: 65.80188679245283
-  - name: NODE_766_length_823_cov_2.255747
-    base-pairs: 823
-    percent-GC: 66.70716889428918
-  - name: NODE_768_length_822_cov_2.438849
-    base-pairs: 822
-    percent-GC: 64.72019464720195
-  - name: NODE_771_length_820_cov_2.124098
-    base-pairs: 820
-    percent-GC: 64.26829268292683
-  - name: NODE_775_length_818_cov_2.473227
-    base-pairs: 818
-    percent-GC: 70.17114914425427
-  - name: NODE_776_length_818_cov_2.014472
-    base-pairs: 818
-    percent-GC: 68.94865525672371
-  - name: NODE_784_length_815_cov_2.289244
-    base-pairs: 815
-    percent-GC: 62.331288343558285
-  - name: NODE_785_length_815_cov_2.261628
-    base-pairs: 815
-    percent-GC: 60.736196319018404
-  - name: NODE_786_length_814_cov_2.682678
-    base-pairs: 814
-    percent-GC: 63.39066339066339
-  - name: NODE_824_length_801_cov_26.574184
-    base-pairs: 801
-    percent-GC: 67.16604244694132
-  - name: NODE_828_length_800_cov_158.401189
-    base-pairs: 800
-    percent-GC: 63.375
-  - name: NODE_842_length_793_cov_2.466967
-    base-pairs: 793
-    percent-GC: 66.20428751576293
-  - name: NODE_843_length_792_cov_2.231579
-    base-pairs: 792
-    percent-GC: 68.18181818181819
-  - name: NODE_867_length_783_cov_2.163110
-    base-pairs: 783
-    percent-GC: 65.00638569604087
-  - name: NODE_877_length_778_cov_19.645161
-    base-pairs: 778
-    percent-GC: 48.84318766066838
-  - name: NODE_910_length_764_cov_2.513344
-    base-pairs: 764
-    percent-GC: 67.53926701570681
-  - name: NODE_935_length_754_cov_2.220096
-    base-pairs: 754
-    percent-GC: 64.05835543766578
-  - name: NODE_961_length_743_cov_2.191558
-    base-pairs: 743
-    percent-GC: 62.98788694481831
-  - name: NODE_962_length_742_cov_2.408130
-    base-pairs: 742
-    percent-GC: 68.73315363881402
-  - name: NODE_1005_length_729_cov_2.207641
-    base-pairs: 729
-    percent-GC: 70.91906721536351
-  - name: NODE_1028_length_724_cov_2.013400
-    base-pairs: 724
-    percent-GC: 64.08839779005525
-  - name: NODE_1038_length_720_cov_2.310287
-    base-pairs: 720
-    percent-GC: 68.61111111111111
-  - name: NODE_1039_length_720_cov_2.072513
-    base-pairs: 720
-    percent-GC: 65.41666666666667
-  - name: NODE_1049_length_718_cov_92.749577
-    base-pairs: 718
-    percent-GC: 62.53481894150418
-  - name: NODE_1088_length_709_cov_2.247423
-    base-pairs: 709
-    percent-GC: 64.03385049365303
-  - name: NODE_1098_length_705_cov_2.399654
-    base-pairs: 705
-    percent-GC: 69.50354609929079
-  - name: NODE_1099_length_705_cov_2.119377
-    base-pairs: 705
-    percent-GC: 66.52482269503547
-  - name: NODE_1144_length_688_cov_2.194296
-    base-pairs: 688
-    percent-GC: 67.73255813953489
-  - name: NODE_1150_length_687_cov_2.189286
-    base-pairs: 687
-    percent-GC: 65.50218340611353
-  - name: NODE_1157_length_686_cov_2.404293
-    base-pairs: 686
-    percent-GC: 68.5131195335277
-  - name: NODE_1161_length_685_cov_2.077061
-    base-pairs: 685
-    percent-GC: 66.13138686131387
-  - name: NODE_1178_length_680_cov_2.216998
-    base-pairs: 680
-    percent-GC: 68.08823529411765
-  - name: NODE_1190_length_678_cov_2.393829
-    base-pairs: 678
-    percent-GC: 64.74926253687316
-  - name: NODE_1198_length_676_cov_2.664845
-    base-pairs: 676
-    percent-GC: 68.34319526627219
-  - name: NODE_1199_length_676_cov_2.030965
-    base-pairs: 676
-    percent-GC: 64.20118343195266
-  - name: NODE_1203_length_675_cov_2.007299
-    base-pairs: 675
-    percent-GC: 68.29629629629629
-  - name: NODE_1225_length_670_cov_2.289134
-    base-pairs: 670
-    percent-GC: 67.61194029850746
-  - name: NODE_1237_length_665_cov_71.269517
-    base-pairs: 665
-    percent-GC: 62.70676691729323
-  - name: NODE_1238_length_665_cov_2.676580
-    base-pairs: 665
-    percent-GC: 68.1203007518797
-  - name: NODE_1255_length_661_cov_9.095506
-    base-pairs: 661
-    percent-GC: 76.09682299546142
-  - name: NODE_1267_length_659_cov_2.050752
-    base-pairs: 659
-    percent-GC: 60.24279210925645
-  - name: NODE_1276_length_657_cov_2.218868
-    base-pairs: 657
-    percent-GC: 68.03652968036529
-  - name: NODE_1277_length_657_cov_2.045283
-    base-pairs: 657
-    percent-GC: 69.10197869101978
-  - name: NODE_1307_length_650_cov_2.040153
-    base-pairs: 650
-    percent-GC: 66.76923076923077
-  - name: NODE_1314_length_649_cov_2.247126
-    base-pairs: 649
-    percent-GC: 65.63944530046226
-  - name: NODE_1321_length_647_cov_2.050000
-    base-pairs: 647
-    percent-GC: 65.9969088098918
-  - name: NODE_1334_length_644_cov_2.011605
-    base-pairs: 644
-    percent-GC: 62.267080745341616
-  - name: NODE_1390_length_632_cov_2.021782
-    base-pairs: 632
-    percent-GC: 57.436708860759495
-  - name: NODE_1394_length_631_cov_2.103175
-    base-pairs: 631
-    percent-GC: 70.5229793977813
-  - name: NODE_1419_length_626_cov_2.210421
-    base-pairs: 626
-    percent-GC: 68.21086261980831
-  - name: NODE_1430_length_625_cov_2.052209
-    base-pairs: 625
-    percent-GC: 67.04
-  - name: NODE_1442_length_622_cov_3.335354
-    base-pairs: 622
-    percent-GC: 62.861736334405144
-  - name: NODE_1447_length_621_cov_2.056680
-    base-pairs: 621
-    percent-GC: 67.9549114331723
-  - name: NODE_1451_length_620_cov_2.004057
-    base-pairs: 620
-    percent-GC: 70.0
-  - name: NODE_1456_length_619_cov_2.563008
-    base-pairs: 619
-    percent-GC: 66.72051696284329
-  - name: NODE_1457_length_619_cov_2.115854
-    base-pairs: 619
-    percent-GC: 65.58966074313409
-  - name: NODE_1465_length_617_cov_2.138776
-    base-pairs: 617
-    percent-GC: 68.39546191247975
-  - name: NODE_1470_length_616_cov_2.292434
-    base-pairs: 616
-    percent-GC: 59.9025974025974
-  - name: NODE_1474_length_615_cov_3.010246
-    base-pairs: 615
-    percent-GC: 63.41463414634146
-  - name: NODE_1507_length_609_cov_2.018672
-    base-pairs: 609
-    percent-GC: 68.14449917898193
-  - name: NODE_1517_length_607_cov_2.412500
-    base-pairs: 607
-    percent-GC: 65.56836902800659
-  - name: NODE_1568_length_594_cov_2.479657
-    base-pairs: 594
-    percent-GC: 63.804713804713806
-  - name: NODE_1582_length_591_cov_2.577586
-    base-pairs: 591
-    percent-GC: 68.35871404399323
-  - name: NODE_1608_length_586_cov_2.145969
-    base-pairs: 586
-    percent-GC: 70.4778156996587
-  - name: NODE_1623_length_584_cov_2.109409
-    base-pairs: 584
-    percent-GC: 66.26712328767124
-  - name: NODE_1632_length_582_cov_2.641758
-    base-pairs: 582
-    percent-GC: 59.79381443298969
-  - name: NODE_1644_length_580_cov_49.609272
-    base-pairs: 580
-    percent-GC: 62.41379310344828
-  - name: NODE_1649_length_579_cov_2.170354
-    base-pairs: 579
-    percent-GC: 65.97582037996546
-  - name: NODE_1669_length_574_cov_2.299776
-    base-pairs: 574
-    percent-GC: 66.72473867595819
-  - name: NODE_1690_length_570_cov_2.548533
-    base-pairs: 570
-    percent-GC: 67.71929824561404
-  - name: NODE_1696_length_569_cov_3.613122
-    base-pairs: 569
-    percent-GC: 67.83831282952548
-  - name: NODE_1710_length_567_cov_2.097727
-    base-pairs: 567
-    percent-GC: 66.31393298059965
-  - name: NODE_1727_length_565_cov_2.006849
-    base-pairs: 565
-    percent-GC: 66.54867256637168
-  - name: NODE_1739_length_563_cov_2.447248
-    base-pairs: 563
-    percent-GC: 66.9626998223801
-  - name: NODE_1750_length_561_cov_2.557604
-    base-pairs: 561
-    percent-GC: 66.84491978609626
-  - name: NODE_1769_length_558_cov_2.153132
-    base-pairs: 558
-    percent-GC: 69.53405017921148
-  - name: NODE_1777_length_556_cov_2.191142
-    base-pairs: 556
-    percent-GC: 65.28776978417267
-  - name: NODE_1782_length_555_cov_55.070093
-    base-pairs: 555
-    percent-GC: 66.84684684684684
-  - name: NODE_1783_length_555_cov_2.306075
-    base-pairs: 555
-    percent-GC: 65.58558558558559
-  - name: NODE_1788_length_554_cov_2.025761
-    base-pairs: 554
-    percent-GC: 67.68953068592057
-  - name: NODE_1849_length_542_cov_2.359036
-    base-pairs: 542
-    percent-GC: 66.42066420664207
-  - name: NODE_1879_length_537_cov_2.751220
-    base-pairs: 537
-    percent-GC: 63.12849162011173
-  - name: NODE_1880_length_537_cov_2.324390
-    base-pairs: 537
-    percent-GC: 70.39106145251397
-  - name: NODE_1881_length_537_cov_2.143902
-    base-pairs: 537
-    percent-GC: 67.41154562383613
-  - name: NODE_1900_length_534_cov_2.007371
-    base-pairs: 534
-    percent-GC: 70.78651685393258
-  - name: NODE_1923_length_529_cov_2.032338
-    base-pairs: 529
-    percent-GC: 64.65028355387524
-  - name: NODE_1924_length_529_cov_2.012438
-    base-pairs: 529
-    percent-GC: 65.40642722117202
-  - name: NODE_1942_length_527_cov_2.147500
-    base-pairs: 527
-    percent-GC: 68.1214421252372
-  - name: NODE_1943_length_527_cov_2.137500
-    base-pairs: 527
-    percent-GC: 68.69070208728652
-  - name: NODE_1964_length_524_cov_2.032746
-    base-pairs: 524
-    percent-GC: 64.31297709923665
-  - name: NODE_1973_length_523_cov_2.164141
-    base-pairs: 523
-    percent-GC: 61.75908221797323
-  - name: NODE_1974_length_523_cov_2.017677
-    base-pairs: 523
-    percent-GC: 69.21606118546845
-  - name: NODE_1981_length_522_cov_2.820253
-    base-pairs: 522
-    percent-GC: 66.28352490421456
-  - name: NODE_2035_length_514_cov_2.472868
-    base-pairs: 514
-    percent-GC: 67.70428015564202
-  - name: NODE_2041_length_513_cov_2.474093
-    base-pairs: 513
-    percent-GC: 67.05653021442495
-  - name: NODE_2042_length_513_cov_2.101036
-    base-pairs: 513
-    percent-GC: 69.5906432748538
-  - name: NODE_2047_length_512_cov_2.475325
-    base-pairs: 512
-    percent-GC: 65.0390625
-  - name: NODE_2059_length_510_cov_2.454308
-    base-pairs: 510
-    percent-GC: 66.27450980392157
-  - name: NODE_2076_length_508_cov_2.832021
-    base-pairs: 508
-    percent-GC: 63.58267716535433
-  - name: NODE_2098_length_505_cov_3.222222
-    base-pairs: 505
-    percent-GC: 66.53465346534654
-  - name: NODE_2134_length_500_cov_57.217158
-    base-pairs: 500
-    percent-GC: 63.4
-  - name: NODE_2135_length_500_cov_2.726542
-    base-pairs: 500
-    percent-GC: 67.2
-  - name: NODE_2136_length_500_cov_2.139410
-    base-pairs: 500
-    percent-GC: 68.4
+    percent-GC: 57.64331210191083
+  - name: NODE_79_length_851_cov_10.951657
+    base-pairs: 851
+    percent-GC: 78.37837837837837
+  - name: NODE_80_length_763_cov_145.011006
+    base-pairs: 763
+    percent-GC: 65.66186107470512
+  - name: NODE_81_length_758_cov_174.437401
+    base-pairs: 758
+    percent-GC: 63.852242744063325
+  - name: NODE_82_length_756_cov_34.712242
+    base-pairs: 756
+    percent-GC: 49.20634920634921
+  - name: NODE_83_length_750_cov_83.781701
+    base-pairs: 750
+    percent-GC: 65.73333333333333
+  - name: NODE_84_length_741_cov_61.342020
+    base-pairs: 741
+    percent-GC: 66.12685560053981
+  - name: NODE_85_length_704_cov_698.596187
+    base-pairs: 704
+    percent-GC: 63.63636363636363
+  - name: NODE_86_length_673_cov_660.584249
+    base-pairs: 673
+    percent-GC: 66.86478454680535
   total:
-    base-pairs: 5666799
-    percent-GC: 67.6332793875343
+    base-pairs: 4636646
+    percent-GC: 67.89342986287933
 - name: refGenome1
   parts:
   - name: CU458896.1 Mycobacterium abscessus ATCC 19977 chromosome, complete sequence
@@ -8482,3 +8116,632 @@ About: >
   total:
     base-pairs: 4636646
     percent-GC: 67.89342986287933
+- name: refGenome32
+  parts:
+  - name: NODE_1_length_572298_cov_65.873875
+    base-pairs: 572298
+    percent-GC: 66.90063568280861
+  - name: NODE_2_length_332893_cov_61.971502
+    base-pairs: 332893
+    percent-GC: 67.7671203660035
+  - name: NODE_3_length_306041_cov_61.055110
+    base-pairs: 306041
+    percent-GC: 68.0114755866044
+  - name: NODE_4_length_223768_cov_61.055500
+    base-pairs: 223768
+    percent-GC: 68.11161560187337
+  - name: NODE_5_length_218506_cov_61.756401
+    base-pairs: 218506
+    percent-GC: 67.71347239892727
+  - name: NODE_6_length_209871_cov_61.590158
+    base-pairs: 209871
+    percent-GC: 67.9803307746187
+  - name: NODE_7_length_206300_cov_32.928070
+    base-pairs: 206300
+    percent-GC: 65.7120698012603
+  - name: NODE_8_length_200434_cov_65.151093
+    base-pairs: 200434
+    percent-GC: 67.37878802997496
+  - name: NODE_9_length_199194_cov_60.996835
+    base-pairs: 199194
+    percent-GC: 68.68530176611745
+  - name: NODE_10_length_175598_cov_59.969790
+    base-pairs: 175598
+    percent-GC: 68.2991833619973
+  - name: NODE_11_length_161220_cov_58.840828
+    base-pairs: 161220
+    percent-GC: 68.62051854608609
+  - name: NODE_12_length_159838_cov_60.369881
+    base-pairs: 159838
+    percent-GC: 68.4593150564947
+  - name: NODE_13_length_132243_cov_63.923666
+    base-pairs: 132243
+    percent-GC: 67.58316130154337
+  - name: NODE_14_length_123258_cov_64.556440
+    base-pairs: 123258
+    percent-GC: 66.64962923299096
+  - name: NODE_15_length_119904_cov_61.226713
+    base-pairs: 119904
+    percent-GC: 67.82425940752601
+  - name: NODE_16_length_118459_cov_56.026502
+    base-pairs: 118459
+    percent-GC: 69.00868654977671
+  - name: NODE_17_length_115305_cov_61.419412
+    base-pairs: 115305
+    percent-GC: 68.2823815099085
+  - name: NODE_18_length_105333_cov_40.737724
+    base-pairs: 105333
+    percent-GC: 65.37647271035668
+  - name: NODE_19_length_104166_cov_49.105326
+    base-pairs: 104166
+    percent-GC: 70.22348943033235
+  - name: NODE_20_length_103173_cov_12.914397
+    base-pairs: 103173
+    percent-GC: 64.59441908251189
+  - name: NODE_21_length_102660_cov_61.601611
+    base-pairs: 102660
+    percent-GC: 68.16481589713618
+  - name: NODE_22_length_102613_cov_12.289923
+    base-pairs: 102613
+    percent-GC: 65.3435724518336
+  - name: NODE_23_length_99441_cov_59.658447
+    base-pairs: 99441
+    percent-GC: 67.69441176174817
+  - name: NODE_24_length_90216_cov_61.044678
+    base-pairs: 90216
+    percent-GC: 68.3138245987408
+  - name: NODE_25_length_84608_cov_67.806619
+    base-pairs: 84608
+    percent-GC: 65.07540658093798
+  - name: NODE_26_length_75791_cov_52.925724
+    base-pairs: 75791
+    percent-GC: 69.57686268818198
+  - name: NODE_27_length_65598_cov_63.672160
+    base-pairs: 65598
+    percent-GC: 67.0432025366627
+  - name: NODE_28_length_63524_cov_59.931669
+    base-pairs: 63524
+    percent-GC: 68.64492160443297
+  - name: NODE_29_length_63255_cov_59.155430
+    base-pairs: 63255
+    percent-GC: 68.75029641925539
+  - name: NODE_30_length_62137_cov_62.622851
+    base-pairs: 62137
+    percent-GC: 67.77765260633761
+  - name: NODE_31_length_55496_cov_65.393957
+    base-pairs: 55496
+    percent-GC: 67.17781461726972
+  - name: NODE_32_length_54285_cov_54.595609
+    base-pairs: 54285
+    percent-GC: 69.744865064014
+  - name: NODE_33_length_48636_cov_53.680905
+    base-pairs: 48636
+    percent-GC: 69.5040710584752
+  - name: NODE_34_length_47414_cov_62.935437
+    base-pairs: 47414
+    percent-GC: 68.28995655291686
+  - name: NODE_35_length_47225_cov_59.391779
+    base-pairs: 47225
+    percent-GC: 68.33033350979355
+  - name: NODE_36_length_46764_cov_58.653172
+    base-pairs: 46764
+    percent-GC: 69.27978787101189
+  - name: NODE_37_length_46089_cov_60.334080
+    base-pairs: 46089
+    percent-GC: 68.3460261667643
+  - name: NODE_38_length_43856_cov_57.733998
+    base-pairs: 43856
+    percent-GC: 68.8776906238599
+  - name: NODE_39_length_37503_cov_56.466877
+    base-pairs: 37503
+    percent-GC: 69.83974615364104
+  - name: NODE_40_length_35870_cov_64.555493
+    base-pairs: 35870
+    percent-GC: 67.18706439921941
+  - name: NODE_41_length_33970_cov_65.295039
+    base-pairs: 33970
+    percent-GC: 67.99823373564911
+  - name: NODE_42_length_32827_cov_56.921743
+    base-pairs: 32827
+    percent-GC: 69.37277241295276
+  - name: NODE_43_length_32458_cov_65.452414
+    base-pairs: 32458
+    percent-GC: 67.12674841333416
+  - name: NODE_44_length_29384_cov_48.556995
+    base-pairs: 29384
+    percent-GC: 69.68077865505036
+  - name: NODE_45_length_29355_cov_66.204119
+    base-pairs: 29355
+    percent-GC: 66.68029296542326
+  - name: NODE_46_length_27981_cov_57.407123
+    base-pairs: 27981
+    percent-GC: 69.44712483470927
+  - name: NODE_47_length_25913_cov_13.199953
+    base-pairs: 25913
+    percent-GC: 66.132829081928
+  - name: NODE_48_length_22321_cov_64.099126
+    base-pairs: 22321
+    percent-GC: 67.30881232919673
+  - name: NODE_49_length_19499_cov_55.234359
+    base-pairs: 19499
+    percent-GC: 69.67536796758809
+  - name: NODE_50_length_15429_cov_66.372827
+    base-pairs: 15429
+    percent-GC: 66.79629269557327
+  - name: NODE_51_length_13665_cov_60.336756
+    base-pairs: 13665
+    percent-GC: 69.35967800951336
+  - name: NODE_52_length_13536_cov_11.715042
+    base-pairs: 13536
+    percent-GC: 63.7854609929078
+  - name: NODE_53_length_12414_cov_55.760804
+    base-pairs: 12414
+    percent-GC: 67.73803769937167
+  - name: NODE_54_length_12322_cov_12.295941
+    base-pairs: 12322
+    percent-GC: 64.51063139100795
+  - name: NODE_55_length_11391_cov_104.995295
+    base-pairs: 11391
+    percent-GC: 63.97155649196734
+  - name: NODE_56_length_10103_cov_12.680333
+    base-pairs: 10103
+    percent-GC: 63.85232109274473
+  - name: NODE_57_length_8877_cov_59.682629
+    base-pairs: 8877
+    percent-GC: 68.85208966993353
+  - name: NODE_58_length_6627_cov_12.690615
+    base-pairs: 6627
+    percent-GC: 63.693979176097784
+  - name: NODE_59_length_5513_cov_178.097661
+    base-pairs: 5513
+    percent-GC: 44.78505350988573
+  - name: NODE_61_length_5328_cov_5.420688
+    base-pairs: 5328
+    percent-GC: 71.90315315315316
+  - name: NODE_62_length_4808_cov_150.969878
+    base-pairs: 4808
+    percent-GC: 56.260399334442596
+  - name: NODE_63_length_4106_cov_30.409902
+    base-pairs: 4106
+    percent-GC: 65.48952752070142
+  - name: NODE_64_length_3847_cov_45.719892
+    base-pairs: 3847
+    percent-GC: 71.64023914738758
+  - name: NODE_65_length_3228_cov_20.313770
+    base-pairs: 3228
+    percent-GC: 68.37050805452293
+  - name: NODE_67_length_2942_cov_10.769094
+    base-pairs: 2942
+    percent-GC: 64.98980285520054
+  - name: NODE_69_length_2732_cov_14.098656
+    base-pairs: 2732
+    percent-GC: 53.18448023426061
+  - name: NODE_70_length_2714_cov_17.708156
+    base-pairs: 2714
+    percent-GC: 73.13927781871776
+  - name: NODE_72_length_2486_cov_9.052141
+    base-pairs: 2486
+    percent-GC: 77.63475462590507
+  - name: NODE_74_length_2456_cov_4.993559
+    base-pairs: 2456
+    percent-GC: 71.94625407166124
+  - name: NODE_100_length_1864_cov_2.871618
+    base-pairs: 1864
+    percent-GC: 64.8068669527897
+  - name: NODE_108_length_1775_cov_13.159587
+    base-pairs: 1775
+    percent-GC: 74.59154929577464
+  - name: NODE_115_length_1736_cov_2.055314
+    base-pairs: 1736
+    percent-GC: 65.78341013824885
+  - name: NODE_119_length_1711_cov_2.399621
+    base-pairs: 1711
+    percent-GC: 64.58211572180012
+  - name: NODE_150_length_1588_cov_2.068446
+    base-pairs: 1588
+    percent-GC: 63.22418136020151
+  - name: NODE_169_length_1507_cov_2.177536
+    base-pairs: 1507
+    percent-GC: 66.55607166556072
+  - name: NODE_174_length_1491_cov_2.211144
+    base-pairs: 1491
+    percent-GC: 65.12407780013413
+  - name: NODE_177_length_1479_cov_2.079142
+    base-pairs: 1479
+    percent-GC: 64.50304259634889
+  - name: NODE_207_length_1407_cov_215.272656
+    base-pairs: 1407
+    percent-GC: 66.66666666666667
+  - name: NODE_210_length_1400_cov_2.129615
+    base-pairs: 1400
+    percent-GC: 67.57142857142857
+  - name: NODE_222_length_1385_cov_2.050079
+    base-pairs: 1385
+    percent-GC: 64.83754512635379
+  - name: NODE_225_length_1379_cov_41.702077
+    base-pairs: 1379
+    percent-GC: 71.9361856417694
+  - name: NODE_316_length_1217_cov_33.211927
+    base-pairs: 1217
+    percent-GC: 69.51520131470829
+  - name: NODE_345_length_1172_cov_15.984689
+    base-pairs: 1172
+    percent-GC: 50.68259385665529
+  - name: NODE_348_length_1163_cov_19.728764
+    base-pairs: 1163
+    percent-GC: 68.09974204643164
+  - name: NODE_376_length_1130_cov_2.280160
+    base-pairs: 1130
+    percent-GC: 66.90265486725664
+  - name: NODE_442_length_1032_cov_2.077348
+    base-pairs: 1032
+    percent-GC: 69.76744186046511
+  - name: NODE_469_length_1013_cov_2.216704
+    base-pairs: 1013
+    percent-GC: 65.64659427443237
+  - name: NODE_473_length_1009_cov_72.420635
+    base-pairs: 1009
+    percent-GC: 65.51040634291378
+  - name: NODE_474_length_1009_cov_2.089569
+    base-pairs: 1009
+    percent-GC: 64.22200198216055
+  - name: NODE_486_length_994_cov_255.179931
+    base-pairs: 994
+    percent-GC: 64.38631790744466
+  - name: NODE_522_length_957_cov_2.007229
+    base-pairs: 957
+    percent-GC: 67.29362591431557
+  - name: NODE_531_length_952_cov_2.619394
+    base-pairs: 952
+    percent-GC: 66.7016806722689
+  - name: NODE_532_length_952_cov_2.185455
+    base-pairs: 952
+    percent-GC: 73.94957983193277
+  - name: NODE_545_length_944_cov_2.115055
+    base-pairs: 944
+    percent-GC: 64.72457627118644
+  - name: NODE_550_length_942_cov_2.071166
+    base-pairs: 942
+    percent-GC: 64.96815286624204
+  - name: NODE_577_length_925_cov_2.611529
+    base-pairs: 925
+    percent-GC: 68.97297297297297
+  - name: NODE_589_length_917_cov_119.891139
+    base-pairs: 917
+    percent-GC: 61.723009814612865
+  - name: NODE_601_length_907_cov_2.007692
+    base-pairs: 907
+    percent-GC: 68.24696802646086
+  - name: NODE_607_length_903_cov_2.110825
+    base-pairs: 903
+    percent-GC: 67.77408637873754
+  - name: NODE_646_length_883_cov_2.216931
+    base-pairs: 883
+    percent-GC: 65.34541336353341
+  - name: NODE_657_length_875_cov_2.172460
+    base-pairs: 875
+    percent-GC: 64.91428571428571
+  - name: NODE_658_length_875_cov_2.128342
+    base-pairs: 875
+    percent-GC: 64.91428571428571
+  - name: NODE_679_length_863_cov_2.023098
+    base-pairs: 863
+    percent-GC: 66.85979142526072
+  - name: NODE_685_length_857_cov_154.416438
+    base-pairs: 857
+    percent-GC: 58.459743290548424
+  - name: NODE_691_length_855_cov_2.436813
+    base-pairs: 855
+    percent-GC: 67.25146198830409
+  - name: NODE_705_length_848_cov_3.199723
+    base-pairs: 848
+    percent-GC: 65.80188679245283
+  - name: NODE_766_length_823_cov_2.255747
+    base-pairs: 823
+    percent-GC: 66.70716889428918
+  - name: NODE_768_length_822_cov_2.438849
+    base-pairs: 822
+    percent-GC: 64.72019464720195
+  - name: NODE_771_length_820_cov_2.124098
+    base-pairs: 820
+    percent-GC: 64.26829268292683
+  - name: NODE_775_length_818_cov_2.473227
+    base-pairs: 818
+    percent-GC: 70.17114914425427
+  - name: NODE_776_length_818_cov_2.014472
+    base-pairs: 818
+    percent-GC: 68.94865525672371
+  - name: NODE_784_length_815_cov_2.289244
+    base-pairs: 815
+    percent-GC: 62.331288343558285
+  - name: NODE_785_length_815_cov_2.261628
+    base-pairs: 815
+    percent-GC: 60.736196319018404
+  - name: NODE_786_length_814_cov_2.682678
+    base-pairs: 814
+    percent-GC: 63.39066339066339
+  - name: NODE_824_length_801_cov_26.574184
+    base-pairs: 801
+    percent-GC: 67.16604244694132
+  - name: NODE_828_length_800_cov_158.401189
+    base-pairs: 800
+    percent-GC: 63.375
+  - name: NODE_842_length_793_cov_2.466967
+    base-pairs: 793
+    percent-GC: 66.20428751576293
+  - name: NODE_843_length_792_cov_2.231579
+    base-pairs: 792
+    percent-GC: 68.18181818181819
+  - name: NODE_867_length_783_cov_2.163110
+    base-pairs: 783
+    percent-GC: 65.00638569604087
+  - name: NODE_877_length_778_cov_19.645161
+    base-pairs: 778
+    percent-GC: 48.84318766066838
+  - name: NODE_910_length_764_cov_2.513344
+    base-pairs: 764
+    percent-GC: 67.53926701570681
+  - name: NODE_935_length_754_cov_2.220096
+    base-pairs: 754
+    percent-GC: 64.05835543766578
+  - name: NODE_961_length_743_cov_2.191558
+    base-pairs: 743
+    percent-GC: 62.98788694481831
+  - name: NODE_962_length_742_cov_2.408130
+    base-pairs: 742
+    percent-GC: 68.73315363881402
+  - name: NODE_1005_length_729_cov_2.207641
+    base-pairs: 729
+    percent-GC: 70.91906721536351
+  - name: NODE_1028_length_724_cov_2.013400
+    base-pairs: 724
+    percent-GC: 64.08839779005525
+  - name: NODE_1038_length_720_cov_2.310287
+    base-pairs: 720
+    percent-GC: 68.61111111111111
+  - name: NODE_1039_length_720_cov_2.072513
+    base-pairs: 720
+    percent-GC: 65.41666666666667
+  - name: NODE_1049_length_718_cov_92.749577
+    base-pairs: 718
+    percent-GC: 62.53481894150418
+  - name: NODE_1088_length_709_cov_2.247423
+    base-pairs: 709
+    percent-GC: 64.03385049365303
+  - name: NODE_1098_length_705_cov_2.399654
+    base-pairs: 705
+    percent-GC: 69.50354609929079
+  - name: NODE_1099_length_705_cov_2.119377
+    base-pairs: 705
+    percent-GC: 66.52482269503547
+  - name: NODE_1144_length_688_cov_2.194296
+    base-pairs: 688
+    percent-GC: 67.73255813953489
+  - name: NODE_1150_length_687_cov_2.189286
+    base-pairs: 687
+    percent-GC: 65.50218340611353
+  - name: NODE_1157_length_686_cov_2.404293
+    base-pairs: 686
+    percent-GC: 68.5131195335277
+  - name: NODE_1161_length_685_cov_2.077061
+    base-pairs: 685
+    percent-GC: 66.13138686131387
+  - name: NODE_1178_length_680_cov_2.216998
+    base-pairs: 680
+    percent-GC: 68.08823529411765
+  - name: NODE_1190_length_678_cov_2.393829
+    base-pairs: 678
+    percent-GC: 64.74926253687316
+  - name: NODE_1198_length_676_cov_2.664845
+    base-pairs: 676
+    percent-GC: 68.34319526627219
+  - name: NODE_1199_length_676_cov_2.030965
+    base-pairs: 676
+    percent-GC: 64.20118343195266
+  - name: NODE_1203_length_675_cov_2.007299
+    base-pairs: 675
+    percent-GC: 68.29629629629629
+  - name: NODE_1225_length_670_cov_2.289134
+    base-pairs: 670
+    percent-GC: 67.61194029850746
+  - name: NODE_1237_length_665_cov_71.269517
+    base-pairs: 665
+    percent-GC: 62.70676691729323
+  - name: NODE_1238_length_665_cov_2.676580
+    base-pairs: 665
+    percent-GC: 68.1203007518797
+  - name: NODE_1255_length_661_cov_9.095506
+    base-pairs: 661
+    percent-GC: 76.09682299546142
+  - name: NODE_1267_length_659_cov_2.050752
+    base-pairs: 659
+    percent-GC: 60.24279210925645
+  - name: NODE_1276_length_657_cov_2.218868
+    base-pairs: 657
+    percent-GC: 68.03652968036529
+  - name: NODE_1277_length_657_cov_2.045283
+    base-pairs: 657
+    percent-GC: 69.10197869101978
+  - name: NODE_1307_length_650_cov_2.040153
+    base-pairs: 650
+    percent-GC: 66.76923076923077
+  - name: NODE_1314_length_649_cov_2.247126
+    base-pairs: 649
+    percent-GC: 65.63944530046226
+  - name: NODE_1321_length_647_cov_2.050000
+    base-pairs: 647
+    percent-GC: 65.9969088098918
+  - name: NODE_1334_length_644_cov_2.011605
+    base-pairs: 644
+    percent-GC: 62.267080745341616
+  - name: NODE_1390_length_632_cov_2.021782
+    base-pairs: 632
+    percent-GC: 57.436708860759495
+  - name: NODE_1394_length_631_cov_2.103175
+    base-pairs: 631
+    percent-GC: 70.5229793977813
+  - name: NODE_1419_length_626_cov_2.210421
+    base-pairs: 626
+    percent-GC: 68.21086261980831
+  - name: NODE_1430_length_625_cov_2.052209
+    base-pairs: 625
+    percent-GC: 67.04
+  - name: NODE_1442_length_622_cov_3.335354
+    base-pairs: 622
+    percent-GC: 62.861736334405144
+  - name: NODE_1447_length_621_cov_2.056680
+    base-pairs: 621
+    percent-GC: 67.9549114331723
+  - name: NODE_1451_length_620_cov_2.004057
+    base-pairs: 620
+    percent-GC: 70.0
+  - name: NODE_1456_length_619_cov_2.563008
+    base-pairs: 619
+    percent-GC: 66.72051696284329
+  - name: NODE_1457_length_619_cov_2.115854
+    base-pairs: 619
+    percent-GC: 65.58966074313409
+  - name: NODE_1465_length_617_cov_2.138776
+    base-pairs: 617
+    percent-GC: 68.39546191247975
+  - name: NODE_1470_length_616_cov_2.292434
+    base-pairs: 616
+    percent-GC: 59.9025974025974
+  - name: NODE_1474_length_615_cov_3.010246
+    base-pairs: 615
+    percent-GC: 63.41463414634146
+  - name: NODE_1507_length_609_cov_2.018672
+    base-pairs: 609
+    percent-GC: 68.14449917898193
+  - name: NODE_1517_length_607_cov_2.412500
+    base-pairs: 607
+    percent-GC: 65.56836902800659
+  - name: NODE_1568_length_594_cov_2.479657
+    base-pairs: 594
+    percent-GC: 63.804713804713806
+  - name: NODE_1582_length_591_cov_2.577586
+    base-pairs: 591
+    percent-GC: 68.35871404399323
+  - name: NODE_1608_length_586_cov_2.145969
+    base-pairs: 586
+    percent-GC: 70.4778156996587
+  - name: NODE_1623_length_584_cov_2.109409
+    base-pairs: 584
+    percent-GC: 66.26712328767124
+  - name: NODE_1632_length_582_cov_2.641758
+    base-pairs: 582
+    percent-GC: 59.79381443298969
+  - name: NODE_1644_length_580_cov_49.609272
+    base-pairs: 580
+    percent-GC: 62.41379310344828
+  - name: NODE_1649_length_579_cov_2.170354
+    base-pairs: 579
+    percent-GC: 65.97582037996546
+  - name: NODE_1669_length_574_cov_2.299776
+    base-pairs: 574
+    percent-GC: 66.72473867595819
+  - name: NODE_1690_length_570_cov_2.548533
+    base-pairs: 570
+    percent-GC: 67.71929824561404
+  - name: NODE_1696_length_569_cov_3.613122
+    base-pairs: 569
+    percent-GC: 67.83831282952548
+  - name: NODE_1710_length_567_cov_2.097727
+    base-pairs: 567
+    percent-GC: 66.31393298059965
+  - name: NODE_1727_length_565_cov_2.006849
+    base-pairs: 565
+    percent-GC: 66.54867256637168
+  - name: NODE_1739_length_563_cov_2.447248
+    base-pairs: 563
+    percent-GC: 66.9626998223801
+  - name: NODE_1750_length_561_cov_2.557604
+    base-pairs: 561
+    percent-GC: 66.84491978609626
+  - name: NODE_1769_length_558_cov_2.153132
+    base-pairs: 558
+    percent-GC: 69.53405017921148
+  - name: NODE_1777_length_556_cov_2.191142
+    base-pairs: 556
+    percent-GC: 65.28776978417267
+  - name: NODE_1782_length_555_cov_55.070093
+    base-pairs: 555
+    percent-GC: 66.84684684684684
+  - name: NODE_1783_length_555_cov_2.306075
+    base-pairs: 555
+    percent-GC: 65.58558558558559
+  - name: NODE_1788_length_554_cov_2.025761
+    base-pairs: 554
+    percent-GC: 67.68953068592057
+  - name: NODE_1849_length_542_cov_2.359036
+    base-pairs: 542
+    percent-GC: 66.42066420664207
+  - name: NODE_1879_length_537_cov_2.751220
+    base-pairs: 537
+    percent-GC: 63.12849162011173
+  - name: NODE_1880_length_537_cov_2.324390
+    base-pairs: 537
+    percent-GC: 70.39106145251397
+  - name: NODE_1881_length_537_cov_2.143902
+    base-pairs: 537
+    percent-GC: 67.41154562383613
+  - name: NODE_1900_length_534_cov_2.007371
+    base-pairs: 534
+    percent-GC: 70.78651685393258
+  - name: NODE_1923_length_529_cov_2.032338
+    base-pairs: 529
+    percent-GC: 64.65028355387524
+  - name: NODE_1924_length_529_cov_2.012438
+    base-pairs: 529
+    percent-GC: 65.40642722117202
+  - name: NODE_1942_length_527_cov_2.147500
+    base-pairs: 527
+    percent-GC: 68.1214421252372
+  - name: NODE_1943_length_527_cov_2.137500
+    base-pairs: 527
+    percent-GC: 68.69070208728652
+  - name: NODE_1964_length_524_cov_2.032746
+    base-pairs: 524
+    percent-GC: 64.31297709923665
+  - name: NODE_1973_length_523_cov_2.164141
+    base-pairs: 523
+    percent-GC: 61.75908221797323
+  - name: NODE_1974_length_523_cov_2.017677
+    base-pairs: 523
+    percent-GC: 69.21606118546845
+  - name: NODE_1981_length_522_cov_2.820253
+    base-pairs: 522
+    percent-GC: 66.28352490421456
+  - name: NODE_2035_length_514_cov_2.472868
+    base-pairs: 514
+    percent-GC: 67.70428015564202
+  - name: NODE_2041_length_513_cov_2.474093
+    base-pairs: 513
+    percent-GC: 67.05653021442495
+  - name: NODE_2042_length_513_cov_2.101036
+    base-pairs: 513
+    percent-GC: 69.5906432748538
+  - name: NODE_2047_length_512_cov_2.475325
+    base-pairs: 512
+    percent-GC: 65.0390625
+  - name: NODE_2059_length_510_cov_2.454308
+    base-pairs: 510
+    percent-GC: 66.27450980392157
+  - name: NODE_2076_length_508_cov_2.832021
+    base-pairs: 508
+    percent-GC: 63.58267716535433
+  - name: NODE_2098_length_505_cov_3.222222
+    base-pairs: 505
+    percent-GC: 66.53465346534654
+  - name: NODE_2134_length_500_cov_57.217158
+    base-pairs: 500
+    percent-GC: 63.4
+  - name: NODE_2135_length_500_cov_2.726542
+    base-pairs: 500
+    percent-GC: 67.2
+  - name: NODE_2136_length_500_cov_2.139410
+    base-pairs: 500
+    percent-GC: 68.4
+  total:
+    base-pairs: 5666799
+    percent-GC: 67.6332793875343
