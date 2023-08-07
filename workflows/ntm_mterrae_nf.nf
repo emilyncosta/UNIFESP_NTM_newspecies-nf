@@ -81,8 +81,8 @@ if (params.compute_similarity_wf) {
 
     ORTHOFINDER ( fasta_ch.collect() )
 
-    //ch_in_orthoani = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
-    //ORTHOANI (params.orthoani_jar, ch_in_orthoani)
+    ch_in_orthoani = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
+    ORTHOANI (params.orthoani_jar, ch_in_orthoani)
 
     //UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
 
