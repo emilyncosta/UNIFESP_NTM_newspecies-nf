@@ -141,7 +141,7 @@ if (params.generate_assemblies_wf) {
     CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
     ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
 
-    RAXMLNG ( UTILS_FASTGREP.out.hcov_fasta )
+    RAXMLNG ( UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } )
 
 //FIXME
 //ORTHOFINDER
