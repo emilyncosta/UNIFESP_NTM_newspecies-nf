@@ -23,7 +23,7 @@ process ORTHOFINDER {
     """
     orthofinder ${args} -f fastas
 
-    mv fasta/OrthoFinder/Results* .
+    mv fastas/OrthoFinder/Results* .
 
     rm Results*/WorkingDirectory
 
