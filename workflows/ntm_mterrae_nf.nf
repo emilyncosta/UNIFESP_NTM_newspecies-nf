@@ -48,17 +48,18 @@ include { INPUT_CHECK } from '../subworkflows/local/input_check'
 //
 // MODULE: Installed directly from nf-core/modules
 //
-include { CHECKM_LINEAGEWF            } from '../modules/nf-core/checkm/lineagewf/main'
-include { TRIMMOMATIC                 } from '../modules/nf-core/trimmomatic/main'
-include { SPADES                      } from '../modules/nf-core/spades/main'
-include { RAXMLNG                     } from '../modules/nf-core/raxmlng/main'
-include { FASTQC                      } from '../modules/nf-core/fastqc/main'
-include { MULTIQC                     } from '../modules/nf-core/multiqc/main'
-include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoftwareversions/main'
-include { UTILS_FILTER_COV_LISTS      } from '../modules/local/utils/filter_cov_lists.nf'
-include { UTILS_FASTGREP              } from '../modules/local/utils/fastgrep.nf'
+include { CHECKM_LINEAGEWF                  } from '../modules/nf-core/checkm/lineagewf/main'
+include { TRIMMOMATIC                       } from '../modules/nf-core/trimmomatic/main'
+include { SPADES                            } from '../modules/nf-core/spades/main'
+include { RAXMLNG as RAXMLNG_NO_BOOTSTRAP   } from '../modules/nf-core/raxmlng/main'
+include { RAXMLNG as RAXMLNG_BOOTSTRAP      } from '../modules/nf-core/raxmlng/main'
+include { FASTQC                            } from '../modules/nf-core/fastqc/main'
+include { MULTIQC                           } from '../modules/nf-core/multiqc/main'
+include { CUSTOM_DUMPSOFTWAREVERSIONS       } from '../modules/nf-core/custom/dumpsoftwareversions/main'
+include { UTILS_FILTER_COV_LISTS            } from '../modules/local/utils/filter_cov_lists.nf'
+include { UTILS_FASTGREP                    } from '../modules/local/utils/fastgrep.nf'
 
-include { ORTHOANI                    } from '../modules/local/orthoani/orthoani.nf'
+include { ORTHOANI                          } from '../modules/local/orthoani/orthoani.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,7 +142,13 @@ if (params.generate_assemblies_wf) {
     CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
     ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
 
-    RAXMLNG ( UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } )
+
+    ch_in_raxmlng = UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } 
+
+    RAXMLNG_NO_BOOTSTRAP ( ch_in_raxmlng )
+
+    RAXMLNG_BOOTSTRAP ( ch_in_raxmlng )
+    
 
 //FIXME
 //ORTHOFINDER
