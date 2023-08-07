@@ -1,6 +1,6 @@
 process ORTHOANI {
     tag "$fasta1 - $fasta2"
-    label 'process_medium'
+    label 'process_low'
 
     conda "bioconda::java-jdk=8.0.112 bioconda::blast=2.14.0"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
