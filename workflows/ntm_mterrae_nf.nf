@@ -146,9 +146,11 @@ if (params.generate_assemblies_wf) {
 //    CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
 //    ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
 
-    ch_in_raxmlng = UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } 
-    RAXMLNG_NO_BOOTSTRAP ( ch_in_raxmlng )
-    RAXMLNG_BOOTSTRAP ( ch_in_raxmlng )
+
+//FIXME The raxmlng execution is a bit problematic
+//    ch_in_raxmlng = UTILS_FASTGREP.out.hcov_fasta.map { m, f -> f } 
+//    RAXMLNG_NO_BOOTSTRAP ( ch_in_raxmlng )
+//    RAXMLNG_BOOTSTRAP ( ch_in_raxmlng )
     
 
 //==================================

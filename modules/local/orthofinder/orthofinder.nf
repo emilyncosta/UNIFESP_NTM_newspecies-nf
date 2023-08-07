@@ -27,6 +27,8 @@ process ORTHOFINDER {
 
     rm -rf Results*/WorkingDirectory
 
+    mv Results* orthofinder
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         orthofinder: \$(orthofinder -h  | grep 'version' | sed 's/^.*OrthoFinder version //' | sed 's/ Copyright (C) 2014 David Emms//')
