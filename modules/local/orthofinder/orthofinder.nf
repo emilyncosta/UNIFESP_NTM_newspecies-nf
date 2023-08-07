@@ -1,10 +1,10 @@
 process ORTHOFINDER {
     label 'process_medium'
 
-    conda "bioconda::java-jdk=8.0.112 bioconda::blast=2.14.0"
+    conda "bioconda::orthofinder=2.5.5"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://docker.io/davidemms/orthofinder:2.5.5.2':
-        'docker.io/davidemms/orthofinder:2.5.5.2' }"
+        'https://depot.galaxyproject.org/singularity/orthofinder:2.5.5--hdfd78af_1' :
+        'biocontainers/orthofinder:2.5.5--hdfd78af_1' }"
 
     input:
     path("fastas/*")
