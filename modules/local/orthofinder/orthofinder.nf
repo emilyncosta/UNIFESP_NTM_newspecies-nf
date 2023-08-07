@@ -10,7 +10,7 @@ process ORTHOFINDER {
     path("fastas/*")
 
     output:
-    path('Results*')
+    path('orthofinder')
     path "versions.yml"           , emit: versions
 
 
