@@ -1,4 +1,4 @@
-process ORTHOANI {
+process ORTHOFINDER {
     tag "$fasta1 - $fasta2"
     label 'process_medium'
 
