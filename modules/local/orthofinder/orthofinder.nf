@@ -9,9 +9,9 @@ process ORTHOFINDER {
     input:
     path("fastas/*")
 
-//    output:
-//    path('*result.txt')
-//    path "versions.yml"           , emit: versions
+    output:
+    path('Results*')
+    path "versions.yml"           , emit: versions
 
 
     when:
@@ -23,9 +23,13 @@ process ORTHOFINDER {
     """
     orthofinder ${args} -f fastas
 
+    mv fasta/OrthoFinder/Results* .
+
+    rm Results*/WorkingDirectory
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        orthofinder: 2.5.5.2
+        orthofinder: \$(orthofinder -h  | grep 'version' | sed 's/^.*OrthoFinder version //' | sed 's/ Copyright (C) 2014 David Emms//')
     END_VERSIONS
     """
 
