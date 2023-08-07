@@ -1,0 +1,6 @@
+sample,fastq_1,fastq_2
+MYC101,MYC101_R1.fastq.gz,MYC101_R2.fastq.gz
+MYC123,MYC123_R1.fastq.gz,MYC123_R2.fastq.gz
+MYC17,MYC17_R1.fastq.gz,MYC17_R2.fastq.gz
+MYC340,MYC340_R1.fastq.gz,MYC340_R2.fastq.gz
+MYC98,MYC98_R1.fastq.gz,MYC98_R2.fastq.gz

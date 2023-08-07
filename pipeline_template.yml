@@ -1,0 +1,6 @@
+author: abhi18av
+description: A Nextflow pipeline for M. terrae analysis
+name: ntm_mterrae_nf
+prefix: UNIFESP_LABMICOBACT
+skip:
+- igenomes
