@@ -55,10 +55,10 @@ include { RAXMLNG                     } from '../modules/nf-core/raxmlng/main'
 include { FASTQC                      } from '../modules/nf-core/fastqc/main'
 include { MULTIQC                     } from '../modules/nf-core/multiqc/main'
 include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoftwareversions/main'
-
 include { UTILS_FILTER_COV_LISTS      } from '../modules/local/utils/filter_cov_lists.nf'
 include { UTILS_FASTGREP              } from '../modules/local/utils/fastgrep.nf'
 
+include { ORTHOANI                    } from '../modules/local/orthoani/orthoani.nf'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,6 +71,26 @@ def multiqc_report = []
 
 workflow NTM_MTERRAE_NF {
 
+
+
+if (params.compute_similarity_wf) {
+
+    fasta_ch = Channel.fromPath("${params.orthoani_fastas}")
+
+    orthoani_ch = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
+
+    ORTHOANI(params.orthoani_jar, orthoani_ch)
+
+    //UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
+
+    //FIXME Basically the script fails to parse and we just need to run the content of the script on the results tsv files from the above step.
+    // UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
+    //     UTILS_REFINE_ORTHOANI_RESULT.out.collect()
+    // )
+
+}
+
+if (params.generate_assemblies_wf) {
     ch_versions = Channel.empty()
 
     //
@@ -119,7 +139,7 @@ workflow NTM_MTERRAE_NF {
     ch_versions = ch_versions.mix(UTILS_FASTGREP.out.versions.first())
 
     CHECKM_LINEAGEWF ( UTILS_FASTGREP.out.hcov_fasta, 'fasta', [] )
-    ch_versions = ch_versions.mix(CHECKM_LINEAGEWF.out.versions.first())
+    ch_versions = ch_versions.mix( CHECKM_LINEAGEWF.out.versions.first() )
 
 //==================================
 //==================================
@@ -151,6 +171,10 @@ workflow NTM_MTERRAE_NF {
         ch_multiqc_logo.toList()
     )
     multiqc_report = MULTIQC.out.report.toList()
+
+ }
+
+
 }
 
 /*
