@@ -21,6 +21,7 @@ process CLJ_ORTHOANI_PROCESSRESULTS {
 
     output:
     path("*csv")
+    path "versions.yml"           , emit: versions
 
 
     script:
