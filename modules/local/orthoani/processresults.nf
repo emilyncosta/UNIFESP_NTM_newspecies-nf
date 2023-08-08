@@ -28,5 +28,9 @@ process CLJ_ORTHOANI_PROCESSRESULTS {
     """
     processorthoani.bb.clj csv -i orthoani_results -o orthoani.results.csv
 
+    cat <<-END_VERSIONS > versions.yml
+    "${task.process}":
+        babashka: 1.3.181
+    END_VERSIONS
     """
 }
