@@ -12,7 +12,7 @@ process ORTHOANI {
     tuple path(fasta1), path(fasta2)
 
     output:
-    path('*result.txt')
+    path('*result.txt')           , emit: result
     path "versions.yml"           , emit: versions
 
 

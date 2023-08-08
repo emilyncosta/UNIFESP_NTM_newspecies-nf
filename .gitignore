@@ -2,3 +2,5 @@ results*
 data
 null
 run_analysis.sh
+.clj-kondo
+.lsp

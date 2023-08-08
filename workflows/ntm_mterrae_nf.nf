@@ -60,6 +60,7 @@ include { UTILS_FILTER_COV_LISTS            } from '../modules/local/utils/filte
 include { UTILS_FASTGREP                    } from '../modules/local/utils/fastgrep.nf'
 
 include { ORTHOANI                          } from '../modules/local/orthoani/orthoani.nf'
+include { CLJ_ORTHOANI_PROCESSRESULTS       } from '../modules/local/orthoani/processresults.nf'
 include { ORTHOFINDER                       } from '../modules/local/orthofinder/orthofinder.nf'
 
 /*
@@ -84,12 +85,7 @@ if (params.compute_similarity_wf) {
     ch_in_orthoani = fasta_ch.combine(fasta_ch).filter { a,b -> a != b }
     ORTHOANI (params.orthoani_jar, ch_in_orthoani)
 
-    //UTILS_REFINE_ORTHOANI_RESULT(ORTHOANI.out[0])
-
-    //FIXME Basically the script fails to parse and we just need to run the content of the script on the results tsv files from the above step.
-    // UTILS_COMBINE_ORTHOANI_RESULTS_TSV(
-    //     UTILS_REFINE_ORTHOANI_RESULT.out.collect()
-    // )
+    CLJ_ORTHOANI_PROCESSRESULTS(ORTHOANI.out.result.collect(sort:true))
 
 }
 
