@@ -26,7 +26,7 @@ process CLJ_ORTHOANI_PROCESSRESULTS {
     script:
 
     """
-    orthoani_refineresults.bb.clj csv -i orthoani_results -o orthoani.results.csv
+    processorthoani.bb.clj csv -i orthoani_results -o orthoani.results.csv
 
     """
 }
