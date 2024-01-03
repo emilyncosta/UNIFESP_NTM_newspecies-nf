@@ -8,7 +8,7 @@
 
 ## Introduction
 
-**UNIFESP_LABMICOBACT/ntm_mterrae_nf** is a bioinformatics pipeline that ...
+**UNIFESP_ntm_newspecies_nf** is a bioinformatics pipeline used for the paper entitled "Description of new species of Mycobacterium terrae complex isolated from sewage at the São Paulo Zoological Park Foundation in Brazil".
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
