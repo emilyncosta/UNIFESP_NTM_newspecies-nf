@@ -64,9 +64,10 @@ nextflow run UNIFESP_LABMICOBACT/ntm_mterrae_nf \
 
 ## Credits
 
-UNIFESP_LABMICOBACT/ntm_mterrae_nf was originally written by abhi18av.
+UNIFESP_LABMICOBACT/ntm_mterrae_nf was originally written by Abhinav Sharma (@abhi18av).
 
-We thank the following people for their extensive assistance in the development of this pipeline:
+We thank the following people for their extensive assistance in the development of this pipeline: 
+Luciano Antonio Digiampietri (@digiampietri), Edson Filho Machado Silvia (@edsonmachado) and Emilyn Costa Conceicao (@emilyncosta)
 
 <!-- TODO nf-core: If applicable, make list of people who have also contributed -->
 
