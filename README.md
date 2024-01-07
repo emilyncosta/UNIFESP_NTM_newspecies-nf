@@ -82,6 +82,8 @@ If you would like to contribute to this pipeline, please see the [contributing g
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
+This pipeline is part of the following study: Romagnoli et al. 2024. Description of new species of Mycobacterium terrae complex isolated from sewage at the São Paulo Zoological Park Foundation in Brazil https://www.frontiersin.org/articles/10.3389/fmicb.2024.1335985 
+
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
 
 This pipeline uses code and infrastructure developed and maintained by the [nf-core](https://nf-co.re) community, reused here under the [MIT license](https://github.com/nf-core/tools/blob/master/LICENSE).
