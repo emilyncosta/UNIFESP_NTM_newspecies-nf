@@ -22,13 +22,13 @@ WorkflowMain.initialise(workflow, params, log)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { NTM_MTERRAE_NF } from './workflows/ntm_mterrae_nf'
+include { NTM_NEWSPECIES_NF } from './workflows/ntm_mterrae_nf'
 
 //
 // WORKFLOW: Run main UNIFESP_LABMICOBACT/ntm_mterrae_nf analysis pipeline
 //
 workflow UNIFESP_LABMICOBACT {
-    NTM_MTERRAE_NF ()
+    NTM_NEWSPECIES_NF ()
 }
 
 /*

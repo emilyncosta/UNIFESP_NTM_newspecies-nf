@@ -7,7 +7,7 @@
 def summary_params = NfcoreSchema.paramsSummaryMap(workflow, params)
 
 // Validate input parameters
-WorkflowNtm_mterrae_nf.initialise(params, log)
+WorkflowNtm_newspecies_nf.initialise(params, log)
 
 // TODO nf-core: Add all file path parameters for the pipeline to the list below
 // Check input path parameters to see if they exist
@@ -59,6 +59,8 @@ include { CUSTOM_DUMPSOFTWAREVERSIONS       } from '../modules/nf-core/custom/du
 include { UTILS_FILTER_COV_LISTS            } from '../modules/local/utils/filter_cov_lists.nf'
 include { UTILS_FASTGREP                    } from '../modules/local/utils/fastgrep.nf'
 
+include { KRAKEN2_KRAKEN2 as CLASSIFY_KRAKEN2 } from '../modules/nf-core/kraken2/kraken2/main'                                                              
+
 include { ORTHOANI                          } from '../modules/local/orthoani/orthoani.nf'
 include { CLJ_ORTHOANI_PROCESSRESULTS       } from '../modules/local/orthoani/processresults.nf'
 include { ORTHOFINDER                       } from '../modules/local/orthofinder/orthofinder.nf'
@@ -72,7 +74,7 @@ include { ORTHOFINDER                       } from '../modules/local/orthofinder
 // Info required for completion email and summary
 def multiqc_report = []
 
-workflow NTM_MTERRAE_NF {
+workflow NTM_NEWSPECIES_NF {
 
 
 
@@ -110,8 +112,17 @@ if (params.generate_assemblies_wf) {
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
 //==================================
-//NTM_MTERRAE_NF
+//NTM_NEWSPECIES_NF
 //==================================
+
+//NOTE: Assumed to be downloaded from https://genome-idx.s3.amazonaws.com/kraken/k2_standard_08gb_20231009.tar.gz
+
+    CLASSIFY_KRAKEN2 (
+        INPUT_CHECK.out.reads,
+        params.kraken2_db,
+        true,
+        true
+    )
 
     TRIMMOMATIC (
         INPUT_CHECK.out.reads,
@@ -160,10 +171,10 @@ if (params.generate_assemblies_wf) {
     //
     // MODULE: MultiQC
     //
-    workflow_summary    = WorkflowNtm_mterrae_nf.paramsSummaryMultiqc(workflow, summary_params)
+    workflow_summary    = WorkflowNtm_newspecies_nf.paramsSummaryMultiqc(workflow, summary_params)
     ch_workflow_summary = Channel.value(workflow_summary)
 
-    methods_description    = WorkflowNtm_mterrae_nf.methodsDescriptionText(workflow, ch_multiqc_custom_methods_description)
+    methods_description    = WorkflowNtm_newspecies_nf.methodsDescriptionText(workflow, ch_multiqc_custom_methods_description)
     ch_methods_description = Channel.value(methods_description)
 
     ch_multiqc_files = Channel.empty()

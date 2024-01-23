@@ -1,4 +1,5 @@
-[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.8220379?labelColor=000000)](https://doi.org/10.5281/zenodo.8220379)
+
 
 [![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A522.10.1-23aa62.svg)](https://www.nextflow.io/)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
@@ -8,20 +9,18 @@
 
 ## Introduction
 
-**UNIFESP_ntm_newspecies_nf** is a bioinformatics pipeline used for the paper entitled "Description of new species of Mycobacterium terrae complex isolated from sewage at the São Paulo Zoological Park Foundation in Brazil".
+**UNIFESP_ntm_newspecies_nf** is a bioinformatics pipeline used for the paper entitled [Description of new species of Mycobacterium terrae complex isolated from sewage at the São Paulo Zoological Park Foundation in Brazil](https://doi.org/10.3389/fmicb.2024.1335985)
 
-<!-- TODO nf-core:
-   Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
-   major pipeline sections and the types of output it produces. You're giving an overview to someone new
-   to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
--->
 
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
+## IDs for the submitted FASTQ samples
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+| Sample ID |  ATCC ID | JCM ID |        Nomenclature       | Nomenclature alias (Gupta et a. 2018) | GenBanK 16S rRNA gene |  Bioproject |   Biosample  |     SRA     | GenBank Draft Genome | PGAP Annotation |
+|:---------:|:--------:|:------:|:-------------------------:|:-------------------------------------:|:---------------------:|:-----------:|:------------:|:-----------:|:--------------------:|:---------------:|
+| MYC017    | TSD-296T | 35364T | Mycobacterium vasticus    | Mycolicibacter vasticus               | MK890459.1            | PRJNA755977 | SAMN20959233 | SRR27405758 | CP084028             | JAYJJQ000000000 |
+| MYC098    | TSD-297T | 35365T | Mycobacterium crassicus   | Mycolicibacter crassicus              | MK890478.1            | PRJNA757362 | SAMN20959234 | SRR27405950 | CP084029             | JAYJJR000000000 |
+| MYC101    | TSD-298T | 35366T | Mycobacterium zoologicum  | Mycolicibacter zoologicum             | MK890479.1            | PRJNA757364 | SAMN20959235 | SRR27405954 | CP084030             | JAYJJS000000000 |
+| MYC123    | BAA3216  | 35367  | Mycobacterium zoologicum  | Mycolicibacter zoologicum             | MK890481.1            | PRJNA743883 | SAMN20062777 | SRR27406169 | CP083985             | JAYJJT000000000 |
+| MYC340    | TSD-299T | 35368T | Mycobacterium nativiensis | Mycolicibacter nativiensis            | MK890521.1            | PRJNA743885 | SAMN20062778 | SRR27406220 | CP083986             | JAYJJU000000000 |
 
 ## Usage
 
@@ -51,8 +50,8 @@ Now, you can run the pipeline using:
 <!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
-nextflow run UNIFESP_LABMICOBACT/ntm_mterrae_nf \
-   -profile <docker/singularity/.../institute> \
+nextflow run emilyncosta/UNIFESP_ntm_newspecies_nf \
+   -profile docker \
    --input samplesheet.csv \
    --outdir <OUTDIR>
 ```
